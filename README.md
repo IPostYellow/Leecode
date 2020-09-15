@@ -8,7 +8,7 @@ left,right=0<br>
 while (right<len(待滑动的列表/字符串)):<br> 
 &nbsp;&nbsp;对当前right位置的元素进行操作<br>
 &nbsp;&nbsp;while(满足了缩小窗口的条件):<br>
-&nbsp;&nbsp;&nbsp；&nbsp；缩小窗口(更新left的值)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;缩小窗口(更新left的值)<br>
 &nbsp;&nbsp;扩大窗口(更新right的值)<br>
 <br>
 1.[209.长度最小的子数组](https://github.com/IPostYellow/Leecode/blob/master/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/python/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.py)<br>
