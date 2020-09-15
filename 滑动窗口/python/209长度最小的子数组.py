@@ -13,7 +13,11 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 
-
+'''
+执行用时：
+44 ms, 在所有 Python3 提交中击败了97.77%的用户
+内存消耗：15.2 MB, 在所有 Python3 提交中击败了71.65%
+的用户'''
 class Solution:
     def minSubArrayLen(self,s,nums):
         windowsize = len(nums) + 1
