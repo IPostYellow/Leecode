@@ -6,7 +6,7 @@ Python版本、Java版本（尚未完成）
 windowSize=看求最大还是最小，根据不同的题目设置个初始值<br>
 left,right=0<br>
 while (right<len(待滑动的列表/字符串)):<br> 
-&nbsp；&nbsp；对当前right位置的元素进行操作<br>
+(&nbsp;)(&nbsp;)对当前right位置的元素进行操作<br>
 &nbsp；&nbsp；while(满足了缩小窗口的条件):<br>
 &nbsp；&nbsp；&nbsp；&nbsp；缩小窗口(更新left的值)<br>
 &nbsp；&nbsp；扩大窗口(更新right的值)<br>
