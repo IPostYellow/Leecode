@@ -15,9 +15,9 @@
 
 '''
 执行用时：
-44 ms, 在所有 Python3 提交中击败了97.77%的用户
-内存消耗：15.2 MB, 在所有 Python3 提交中击败了71.65%
-的用户'''
+执行用时：44 ms, 在所有 Python3 提交中击败了97.77%的用户
+内存消耗：15.2 MB, 在所有 Python3 提交中击败了71.65%的用户
+'''
 class Solution:
     def minSubArrayLen(self,s,nums):
         windowsize = len(nums) + 1
@@ -29,8 +29,6 @@ class Solution:
             while (left<=right and cursum>=s):
                 if windowsize > right - left + 1:
                     windowsize = right - left + 1
-                    ansl = left
-                    ansr = right
                 cursum-=nums[left]
                 left+=1
             right+=1
