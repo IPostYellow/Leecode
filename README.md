@@ -1,5 +1,8 @@
+### 基础数据结构相关操作
+[带有最小值的栈(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E5%8C%85%E5%90%AB%E6%9C%80%E5%B0%8F%E5%80%BC%E7%9A%84%E6%A0%88.py)
 ### 记录Leetcode刷的题目
 Python版本、Java版本（尚未完成）
+按分类查看：滑动窗口(#滑动窗口)<br>
 
 ## 滑动窗口
 解题模板：<br>
