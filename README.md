@@ -33,3 +33,26 @@ while (right<len(待滑动的列表/字符串)):<br>
 &emsp;&emsp;&emsp;&emsp;将哈希表中left指向的字母个数减1，缩小窗口(更新left的值)<br>
 &emsp;&emsp;判断当前窗口大小和历史最大窗口，看看是否要更新最大窗口大小<br>
 &emsp;&emsp;扩大窗口(更新right的值)<br>
+[438.找到字符串中所有字母异位词](https://github.com/IPostYellow/Leecode/blob/master/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/python/438%E6%89%BE%E5%88%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.py)<br>
+思路：固定滑动窗口的大小为所找字符的长度。然后不断判断窗口内的每种字母的个数是否和所找字符中每种字母的个数相等。若相等则说明该窗口的起始位置为答案之一，否则滑动窗口。消耗时间188ms,消耗内存14.4MB。对应的模板中的例子就是<br>
+```
+s_dict=defaultdict(int)#滑动窗口内每种字母个数的字典
+p_dict=defaultdict(int)#所找字符串每种字母个数的字典
+left,right=0,-1
+for i in p:#构建所找字符串中每种字母的个数字典
+    p_dict[i]+=1
+for i in range(len(p)):#移动右指针使得窗口和所找字符串长度相等
+    right+=1
+    if s[right] in p_dict:
+        s_dict[s[right]]+=1
+while right<len(s)：
+    if(当前窗口内每种字母的个数和所找字符串中每种字母个数相等):
+        得到答案，将此答案存起来
+    if(s[left] in p_dict):
+        将存储的窗口内最左边的有效值的字典值-1
+    left+=1#移动窗口
+    right+=1
+    if right<len(s) and s[right] in p_dict:#移动窗口后把是所找字符串内的字母给加到当前的滑动窗口内每种字母个数的字典中去
+        s_dict[s[right]]+=1
+return 总答案
+```
