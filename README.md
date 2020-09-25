@@ -7,10 +7,10 @@ Python版本、Java版本（尚未完成）
 windowSize=看求最大还是最小，根据不同的题目设置个初始值
 left,right=0<br>
 while (right<len(待滑动的列表/字符串)):
-&emsp;&emsp;对当前right位置的元素进行操作
-&emsp;&emsp;while(满足了缩小窗口的条件):
-&emsp;&emsp;&emsp;&emsp;缩小窗口(更新left的值)
-&emsp;&emsp;扩大窗口(更新right的值)
+    对当前right位置的元素进行操作
+    while(满足了缩小窗口的条件):
+        缩小窗口(更新left的值)
+    扩大窗口(更新right的值)
 ```
 <br>
 
@@ -21,10 +21,10 @@ windowSize=给定的数组长度+1<br>
 当前窗口内的值总和=0<br>
 left,right=0<br>
 while (right<len(待滑动的列表/字符串)):<br> 
-&emsp;&emsp;将当前的值加入到窗口总和去<br>
-&emsp;&emsp;while(当前的窗口内的值总和大于等于给定的阈值s):<br>
-&emsp;&emsp;&emsp;&emsp;缩小窗口(更新left的值)<br>
-&emsp;&emsp;扩大窗口(更新right的值)<br>
+    将当前的值加入到窗口总和去<br>
+    while(当前的窗口内的值总和大于等于给定的阈值s):<br>
+        缩小窗口(更新left的值)<br>
+    扩大窗口(更新right的值)<br>
 ```
 <br>
 
@@ -36,11 +36,11 @@ while (right<len(待滑动的列表/字符串)):<br>
 窗口内相同字母最多的个数=0<br>
 left,right=0<br>
 while (right<len(待滑动的列表/字符串)):<br> 
-&emsp;&emsp;将当前的字母记录到哈希表中去，并更新窗口内相同字母最多的个数<br>
-&emsp;&emsp;while(当前窗口的长度与哈希表中最多的字母数的差大于给定的k值):<br>
-&emsp;&emsp;&emsp;&emsp;将哈希表中left指向的字母个数减1，缩小窗口(更新left的值)<br>
-&emsp;&emsp;判断当前窗口大小和历史最大窗口，看看是否要更新最大窗口大小<br>
-&emsp;&emsp;扩大窗口(更新right的值)<br>
+    将当前的字母记录到哈希表中去，并更新窗口内相同字母最多的个数<br>
+    while(当前窗口的长度与哈希表中最多的字母数的差大于给定的k值):<br>
+        将哈希表中left指向的字母个数减1，缩小窗口(更新left的值)<br>
+    判断当前窗口大小和历史最大窗口，看看是否要更新最大窗口大小<br>
+    扩大窗口(更新right的值)<br>
 ```
 <br>
 
