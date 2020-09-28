@@ -1,8 +1,8 @@
 ### 基础数据结构相关操作
 [带有最小值的栈(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E5%8C%85%E5%90%AB%E6%9C%80%E5%B0%8F%E5%80%BC%E7%9A%84%E6%A0%88.py)<br>
-[反转链表](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.py)<br>
-[判断链表是否有环](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/141%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8.py)<br>
-[判断链表中环的入口](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/142%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.py)<br>
+[反转链表(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.py)<br>
+[判断链表是否有环(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/141%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8.py)<br>
+[判断链表中环的入口(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/142%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.py)<br>
 ### 记录Leetcode刷的题目
 Python版本、Java版本（尚未完成）<br>
 按分类查看：[滑动窗口](#滑动窗口)<br>
