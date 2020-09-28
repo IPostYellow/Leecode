@@ -90,3 +90,18 @@ p3.next = p4
 p4.next = p3
 s = Solution2()
 print(s.detectCycle(p).val)
+
+'''
+方法一：用set将遍历过的节点存储起来，当遇到在set中存在的节点的时候，那个节点就是环的入口
+方法二：递推式。设F为环外的节点数，C为环节点数。则当slow指针到了环入口时，fast指向了以环入
+口开始数第h个节点。显然h=F mod C。因为fast比slow多走了F个节点。
+那么继续走C-h次，fast和slow会相遇。此时快指针，从h开始走了2(C-h)个节点。即现在应
+该指向2C-h。而slow指针则是指向C-h，而（2C-h）mod C=(C-h)mod C。所以相遇的点为C-h。
+此时按照fast比slow走了2倍的节点的公式可以得到
+2(F+C-h)=F+N(C)+C-h
+F=(N-1)C+h
+
+新建一个later指针指向head。later指针和slow指针同时以每步一个节点的速度走直到相遇。
+那么later指针走了F到环的入口的时候，slow指针刚好走到了C-h+F=NC的地方，也就是环的入口。
+所以slow和later相遇的地方即为环的入口
+'''
