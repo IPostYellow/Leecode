@@ -25,17 +25,13 @@ class ListNode:
         self.next = next
 
 
-class Solution:#48ms,13.5mb
+class Solution:  # 44ms,13.5mb
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        if head == None:
-            return head
-        if head.next == None and n == 1:
-            return head.next
         p2 = ListNode(0)
         p2.next = head
         p1 = head
         res = p2
-        for i in range(n-1):
+        for i in range(n - 1):
             p1 = p1.next
         while (p1.next != None):
             p1 = p1.next
@@ -44,6 +40,26 @@ class Solution:#48ms,13.5mb
         p2.next = p2.next.next
 
         return res.next
+
+
+class Soulution2:#36ms,13.6mb
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        p1 = head
+        p2 = head
+        count = n
+        while (count > 0):
+            if p1.next == None:
+                return head.next
+            p1 = p1.next
+            count -= 1
+
+        while (p1.next != None):
+            p1 = p1.next
+            p2 = p2.next
+
+        p2.next = p2.next.next
+
+        return head
 
 
 p1 = ListNode(1)
@@ -61,8 +77,8 @@ s = Solution()
 # print(k)
 # o1=ListNode(1)
 # d=s.removeNthFromEnd(o1,1)
-o2=ListNode(1)
-o3=ListNode(2)
-o2.next=o3
-dd=s.removeNthFromEnd(o2,2)
+o2 = ListNode(1)
+o3 = ListNode(2)
+o2.next = o3
+dd = s.removeNthFromEnd(o2, 2)
 print(dd)
