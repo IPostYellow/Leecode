@@ -10,6 +10,7 @@
 [链表的中间结点(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/876%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9.py)<br>
 [合并两个有序链表(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/21%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8.py)<br>
 [链表分割(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/86%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8.py)<br>
+[删除链表的倒数第n个结点(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/19%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9.py)<br>
 ## 树
 [二叉树的后序遍历(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/145%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86.py)<br>
 
