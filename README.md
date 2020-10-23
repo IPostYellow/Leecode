@@ -86,3 +86,23 @@ while right<len(s)：
         s_dict[s[right]]+=1
 return 总答案
 ```
+
+## 二分搜索
+解题模板：<br>
+```
+    public int binarySearch(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) >> 1;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] > target) {//目标在左边
+                right = mid - 1;
+            } else if (nums[mid] < target) {//目标在右边
+                left = mid + 1;
+            }
+        }
+        return -1;//搜索失败，没有对应的元素
+    }
+
+```
+<br>
