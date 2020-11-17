@@ -106,3 +106,16 @@ return 总答案
 
 ```
 <br>
+
+852.山脉数组的峰顶索引
+思路：等价于找数组中的极大值，可以直接遍历然后判断如果前一个元素大于他后面的元素则说明找到了答案。也可以使用二分搜索。因为山峰的特点，在山顶左边是递增的，山顶右边是递减的，所以在二分搜索的时候判断是递增还是递减就可以知道该向哪半边进行二分搜索。
+```
+        left, right = 0, len(arr) - 1
+        while (left < right):
+            mid = (right - right) // 2 + left
+            if arr[mid] < arr[mid + 1]:
+                left = mid + 1
+            else:
+                right = mid
+        return left
+```
