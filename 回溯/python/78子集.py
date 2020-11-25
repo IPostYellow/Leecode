@@ -1,4 +1,5 @@
 import copy
+
 '''
 给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
 说明：解集不能包含重复的子集。
@@ -35,6 +36,7 @@ def backtrack(路径, 选择列表):
         撤销选择
 '''
 
+
 class Solution1:
     def subsets(self, nums):
         res = []
@@ -51,9 +53,9 @@ class Solution2:  # 迭代
             res = res + [[i] + j for j in res]
         return res
 
+
 # s = Solution2()
 # print(s.subsets([1, 2, 3]))
-
 
 
 class Solution3:
@@ -61,16 +63,17 @@ class Solution3:
     def subsets(self, nums):
         result = []
 
-        def backtrack(nums, start, track):
+        def backtrack(start, track):
             track = copy.deepcopy(track)
             result.append(track)
             for i in range(start, len(nums)):
                 track.append(nums[i])
-                backtrack(nums, i + 1, track)
+                backtrack(i + 1, track)
                 track.pop(-1)
 
-        backtrack([1,2,3],0,[])
+        backtrack(0, [])
         return result
+
 
 s = Solution3()
 print(s.subsets([1, 2, 3]))
