@@ -119,3 +119,32 @@ return 总答案
                 right = mid
         return left
 ```
+
+## 回溯法
+解题模板：<br>
+```
+result = []
+def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        result.add(路径)
+        return
+
+    for 选择 in 选择列表:
+        做选择
+        backtrack(路径, 选择列表)
+        撤销选择
+```
+<br>
+
+[78.子集(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/78%E5%AD%90%E9%9B%86.py)
+思路：回溯法关键要确定选择列表和路径以及结束条件，但是因为子集是全部子集都要，所以没有结束条件，结束条件就是遍历完。选择列表则是上一层选择路径之后的数，也就是for i in range(start,len(数组长度)):，从上一层传递过来的start到最后。做出选择就是将当前选择的元素加入路径tmp.append(nums[i]) ，撤销选择为 tmp.pop(-1) 
+
+```
+def backtrack(start,tmp):
+    result.append(tmp) # 将结果存入结果列表
+    for i in range(start,len(数组长度)):
+        tmp.append(nums[i]) # 添加当前路径的元素
+        backtrack(i+1,tmp) # 递归下一个元素
+        tmp.pop(-1) # 回溯回去的时候要撤销掉这一层的选择
+    
+```
