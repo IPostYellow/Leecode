@@ -188,3 +188,17 @@ def trackback(start, sum, track):
         if sum + nums[i] > target:  # 满足大于则直接剪枝
             return
 ```
+[46.全排列](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/46%E5%85%A8%E6%8E%92%E5%88%97.py)<br>
+思路：回溯法关键要确定选择列表和路径以及结束条件，很显然一个递归的结束条件就是len(路径)==len(数组)。选择列表是数组中除了前面选过的数之外的每个数，for i in range(0,len(数组)),利用一个check数组存储起来哪些数有没有被选择。
+```
+def backtrack(self, sol, check):
+    if len(sol) == len(nums):
+        self.res.append(sol)
+        return
+    for i in range(len(nums)):
+        if check[i] == 1:
+            continue
+        check[i] = 1
+        self.backtrack(sol + [nums[i]], check)
+        check[i] = 0
+```
