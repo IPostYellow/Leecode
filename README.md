@@ -148,6 +148,16 @@ def backtrack(start,tmp):
         tmp.pop(-1) # 回溯回去的时候要撤销掉这一层的选择
     
 ```
+[90.子集II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/90%E5%AD%90%E9%9B%86II.py)
+思路：和78.子集思路一致，只不过包含了重复数字，排序好后只需要在循环中加一条剪枝条件即可。
+```
+def trackback(start,track):
+    result.append(track)
+    for i in range(start,len(nums)):
+        if (i>start) and (tmp[i]==tmp[i-1]):#如果当前这条分支的数字和前一条相同，则直接跳过这条分支
+            continue
+        trackback(i+1,track+[tmp[i]])
+```
 
 [39.组合总数(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/39%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.py)
 思路：回溯法关键要确定选择列表和路径以及结束条件，很显然一个递归的结束条件就是sum==target。选择列表是数组中的每个。for i in range(start,len(数组)),做出选择就是当sum+当前选的数小于target的时候，将track+[nums[i]]作为新的路径，sum+nums[i]作为新的目前和值，进入下一层的递归，值得注意的是，为了实现数组内每个数字可以重复无限次使用，传入下一层递归的start依然为i。
