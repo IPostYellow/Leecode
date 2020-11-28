@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7fb7187-eeef-4c85-8010-f1f0f5246c3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/回溯/python/组合总和II.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/回溯/python/47全排列II.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +13,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/回溯/python/组合总和II.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/回溯/python/40组合总和II.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+            <state relative-caret-position="45">
+              <caret line="27" selection-start-line="27" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/回溯/python/46全排列.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1341">
+              <caret line="109" column="17" selection-start-line="108" selection-end-line="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/回溯/python/47全排列II.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -39,11 +57,13 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/回溯/python/组合总和II.py" />
+        <option value="$PROJECT_DIR$/回溯/python/40组合总和II.py" />
+        <option value="$PROJECT_DIR$/回溯/python/47全排列II.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="950" />
+    <option name="x" value="-15" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -108,7 +128,7 @@
       <updated>1605618027321</updated>
       <workItem from="1605618047368" duration="409000" />
       <workItem from="1606547661286" duration="68000" />
-      <workItem from="1606548242376" duration="582000" />
+      <workItem from="1606548242376" duration="2707000" />
     </task>
     <task id="LOCAL-00001" summary="新增852题目的解题思路">
       <created>1605618442081</created>
@@ -121,13 +141,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1059000" />
+    <option name="totallyTimeSpent" value="3184000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="760" y="0" width="784" height="832" extended-state="0" />
+    <frame x="-12" y="0" width="784" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.446281" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28236914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -176,10 +196,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/回溯/python/组合总和II.py">
+    <entry file="file://$PROJECT_DIR$/回溯/python/40组合总和II.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+        <state relative-caret-position="45">
+          <caret line="27" selection-start-line="27" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/回溯/python/46全排列.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1341">
+          <caret line="109" column="17" selection-start-line="108" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/回溯/python/47全排列II.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
