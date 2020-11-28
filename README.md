@@ -136,7 +136,7 @@ def backtrack(路径, 选择列表):
 ```
 <br>
 
-[78.子集(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/78%E5%AD%90%E9%9B%86.py)
+[78.子集(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/78%E5%AD%90%E9%9B%86.py)<br>
 思路：回溯法关键要确定选择列表和路径以及结束条件，但是因为子集是全部子集都要，所以没有结束条件，结束条件就是遍历完。选择列表则是上一层选择路径之后的数，也就是for i in range(start,len(数组长度)):，从上一层传递过来的start到最后。做出选择就是将当前选择的元素加入路径tmp.append(nums[i]) ，撤销选择为 tmp.pop(-1) 
 
 ```
@@ -148,7 +148,7 @@ def backtrack(start,tmp):
         tmp.pop(-1) # 回溯回去的时候要撤销掉这一层的选择
     
 ```
-[90.子集II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/90%E5%AD%90%E9%9B%86II.py)
+[90.子集II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/90%E5%AD%90%E9%9B%86II.py)<br>
 思路：和78.子集思路一致，只不过包含了重复数字，排序好后只需要在循环中加一条剪枝条件即可。
 ```
 def trackback(start,track):
@@ -159,7 +159,7 @@ def trackback(start,track):
         trackback(i+1,track+[tmp[i]])
 ```
 
-[39.组合总数(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/39%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.py)
+[39.组合总数(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/39%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.py)<br>
 思路：回溯法关键要确定选择列表和路径以及结束条件，很显然一个递归的结束条件就是sum==target。选择列表是数组中的每个。for i in range(start,len(数组)),做出选择就是当sum+当前选的数小于target的时候，将track+[nums[i]]作为新的路径，sum+nums[i]作为新的目前和值，进入下一层的递归，值得注意的是，为了实现数组内每个数字可以重复无限次使用，传入下一层递归的start依然为i。
 ```
 def trackback(start, sum, track):
@@ -173,7 +173,7 @@ def trackback(start, sum, track):
             return
 ```
 
-[40.组合总数II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/40%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.py)
+[40.组合总数II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/40%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.py)<br>
 思路：和39.组合总数思路一致，但是在循环中加一条剪枝条件，然后由于数字无法无限次重复使用，传入下一层递归的start应该+1。
 ```
 def trackback(start, sum, track):
