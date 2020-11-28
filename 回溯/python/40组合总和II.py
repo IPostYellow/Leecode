@@ -25,7 +25,7 @@ candidates 中的每个数字在每个组合中只能使用一次。
 链接：https://leetcode-cn.com/problems/combination-sum-ii
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
-class Solution:
+class Solution:# 48ms,13.6mb
     def combinationSum2(self, candidates, target: int):
         nums=sorted(candidates)
         result=[]
