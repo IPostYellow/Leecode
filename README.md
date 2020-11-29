@@ -218,3 +218,72 @@ def trackback(track, used):
             trackback(track + [nums[i]], used)
             used[i] = 0
 ```
+
+[51.N皇后(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/51N%E7%9A%87%E5%90%8E.py)<br>
+思路：回溯法关键要确定选择列表和路径以及结束条件，很显然一个递归的结束条件就是我已经放完了合法的最后一行的皇后位置。即if row == n:，选择列表是n列的位置，剪枝是判断皇后的位置是否合法，若不合法的分支则剪掉。值得注意的是，因为递归完就有撤销选择，所以不用担心同一行会出现多个皇后。剪枝只需要判断斜线和列就行了。
+```
+def trackback(row, cheer): # row 为棋盘的行，cheer为棋盘
+    if row == n: # 一个递归的结束条件
+        result.append([''.join(s) for s in cheer])
+        return
+    for col in range(n):
+        if not isValid(row, col, cheer): # 若不合法就剪枝掉
+            continue
+        cheer[row][col] = 'Q'
+        trackback(row + 1, cheer) # 下一层递归
+        cheer[row][col] = '.'
+
+def isValid(row, col, cheer):
+    tp_row = row - 1
+    tp_col = col - 1
+    while (tp_col >= 0 and tp_row >= 0):  # 正对角线是否有皇后
+        if cheer[tp_row][tp_col] == 'Q':
+            return False
+        tp_row -= 1
+        tp_col -= 1
+    tp_row = row - 1
+    tp_col = col + 1
+    while (tp_row >= 0 and tp_col < len(cheer)): #逆对角线是否有皇后
+        if cheer[tp_row][tp_col] == 'Q':
+            return False
+        tp_row -= 1
+        tp_col += 1
+    for i in range(0, row): #同一列中是否有皇后
+        if cheer[i][col] == 'Q':
+            return False
+    return True
+```
+[52.N皇后II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/52N%E7%9A%87%E5%90%8EII.py)<br>
+思路：和51.N皇后思路一样，只不过不需要存储下皇后所在位置，只需要计数就可以了。
+```
+def trackback(row, cheer):
+    if row == n:
+        self.result += 1
+        return
+    for i in range(n):
+        if not isValid(row, i, cheer):
+            continue
+        cheer[row][i] = 'Q'
+        trackback(row + 1, cheer)
+        cheer[row][i] = '.'
+
+def isValid(row, col, cheer):
+    tp_row = row - 1
+    tp_col = col - 1
+    while (tp_row >= 0 and tp_col >= 0): # 正对角线是否有皇后
+        if cheer[tp_row][tp_col] == 'Q':
+            return False
+        tp_row -= 1
+        tp_col -= 1
+    tp_row = row - 1
+    tp_col = col + 1
+    while (tp_row >= 0 and tp_col < n): #逆对角线是否有皇后
+        if cheer[tp_row][tp_col] == 'Q':
+            return False
+        tp_row -= 1
+        tp_col += 1
+    for i in range(row): #同一列中是否有皇后
+        if cheer[i][col] == 'Q':
+            return False
+    return True
+```
