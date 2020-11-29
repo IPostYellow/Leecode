@@ -41,4 +41,4 @@ class Solution:#96ms,14mb
                     continue
 
         trackback([], used)
-        return result    
+        return result
