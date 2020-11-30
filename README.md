@@ -287,3 +287,27 @@ def isValid(row, col, cheer):
             return False
     return True
 ```
+[980.不同路径III](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/980.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84III.py)<br>
+思路：回溯法模拟机器人走过的所有路径，关键要确定选择列表和路径以及结束条件，很显然结束条件就是我的步数走完了所有可走的格子并且到了终点，即i == end[0] and j == end[1] and cur_step == step+1。选择列表为往上下左右走，剪枝则很明显是减去走到了非法路径和障碍物的路径和已经走过的路径。
+```
+def trackback(i, j, grid, cur_step): # i为当前到了的行，j为当前到了的列，cur_step为当前走的步数，grid为迷宫数组
+    if i == end[0] and j == end[1] and cur_step == step+1: #step为grid中除了终点起点的可以走的格子数
+        self.res += 1
+        return
+    grid[i][j] = -1 #先把i行j列标记为走过了
+    if is_valid(i - 1, j, grid): #上
+        trackback(i - 1, j, grid, cur_step + 1)
+    if is_valid(i, j - 1, grid): #右
+        trackback(i, j - 1, grid, cur_step + 1)
+    if is_valid(i + 1, j, grid): #下
+        trackback(i + 1, j, grid, cur_step + 1)
+    if is_valid(i, j + 1, grid): #左
+        trackback(i, j + 1, grid, cur_step + 1)
+    grid[i][j] = 0 #撤销选择
+
+def is_valid(i, j, grid): #判断是否要剪枝
+    if i >= 0 and j >= 0 and i < row and j < col and grid[i][j] != -1:
+        return True
+    else:
+        return False
+```
