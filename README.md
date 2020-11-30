@@ -18,7 +18,7 @@
 [链表归并排序(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/148%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.py)<br>
 ### 记录Leetcode刷的题目
 Python版本、Java版本（尚未完成）<br>
-按分类查看：[滑动窗口](#滑动窗口)<br>
+按分类查看：[滑动窗口](#滑动窗口)、[二分搜索](#二分搜索)、[回溯法](#回溯法)<br>
 
 ## 滑动窗口
 解题模板：<br>
