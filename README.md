@@ -188,6 +188,23 @@ def trackback(start, sum, track):
         if sum + nums[i] > target:  # 满足大于则直接剪枝
             return
 ```
+[216.组合总数III(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/216.%E7%BB%84%E5%90%88%E6%80%BB%E6%95%B0III.py)
+思路：和39.组合总数与40.组合总数II类似，只不过nums变成了[1,2,3,4,5,6,7,8,9]，结束条件变成了sum + nums[i] == n且cur_num + 1 == k。
+```
+def trackback(sum, track, start, cur_num): # sum为目前的累加和，track为目前已经选择的数字，start表示选择列表该从哪个位置开始选，cur_sum表示当前已经选了几个数字
+    for i in range(start, 9):
+        if sum + nums[i] == n:
+            if cur_num + 1 == k:
+                result.append(track + [nums[i]])
+            else:
+                return
+        if sum + nums[i] > n:
+            return
+        if sum + nums[i] < n:
+            trackback(sum + nums[i], track + [nums[i]], i + 1, cur_num + 1)
+
+```
+
 [46.全排列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/46%E5%85%A8%E6%8E%92%E5%88%97.py)<br>
 思路：回溯法关键要确定选择列表和路径以及结束条件，很显然一个递归的结束条件就是len(路径)==len(数组)。选择列表是数组中除了前面选过的数之外的每个数，for i in range(0,len(数组)),利用一个check数组存储起来哪些数有没有被选择。
 ```
