@@ -194,6 +194,22 @@ def findMin(self, nums: List[int]) -> int:
     return nums[left]
 ```
 
+[154.寻找旋转排序数组中的最小值II](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/154%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BCII.py)<br>
+思路：和[153.寻找旋转排序数组中的最小值]的思路类似，只不过在153中讨论的三种情况中，多了一种mid的值等于right的值的情况，这种时候我们只需要将right的值减一即可。相当于去除重复元素。
+```
+def findMin(self, nums: List[int]) -> int:
+    left,right=0,len(nums)-1
+    while(left<right):
+        mid=left+((right-left)>>1)
+        if nums[mid]>nums[right]:
+            left=mid+1
+        elif nums[mid]<nums[right]:
+            right=mid
+        else:
+            right-=1
+    return nums[left]
+```
+
 852.山脉数组的峰顶索引
 思路：等价于找数组中的极大值，可以直接遍历然后判断如果前一个元素大于他后面的元素则说明找到了答案。也可以使用二分搜索。因为山峰的特点，在山顶左边是递增的，山顶右边是递减的，所以在二分搜索的时候判断是递增还是递减就可以知道该向哪半边进行二分搜索。
 ```
