@@ -180,6 +180,20 @@ def searchRange(self, nums: List[int], target: int) -> List[int]:
     return [leftans, rightans]
 ```
 
+[153.寻找旋转排序数组中的最小值](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/153%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC.py)<br>
+思路：因为要在[left,right]中搜索，所以right=len(nums)-1，最终我们要留下那个最小值，所以区间到最后还有一个元素，所以while中left<right。然后对于数组[3,4,5,6,7,0,1,2]，有那么一些情况，如果mid值比left和right的值都要小，类似mid=0,mid=1，则说明最小值在[left,mid]中。如果mid值比left和right的值都要大，比如mid=4,5,6,7，则说明最小值在(mid,right]中。而对于没有旋转的数组[0,1,2,3,4,5,6,7],mid的值肯定是大于left的值小于right的值的，此时的最小值也在[left,mid]中。把两种[left,mid]的情况合并，得出只要mid的值大于right的值的时候应该去(mid,right]区间搜寻，其他情况都应该在[left,mid]中搜寻。
+```
+def findMin(self, nums: List[int]) -> int:
+    left,right=0,len(nums)-1
+    while(left<right):
+        mid=left+((right-left)>>1)
+        if nums[mid]>nums[right]:
+            left=mid+1
+        else:
+            right=mid
+    return nums[left]
+```
+
 852.山脉数组的峰顶索引
 思路：等价于找数组中的极大值，可以直接遍历然后判断如果前一个元素大于他后面的元素则说明找到了答案。也可以使用二分搜索。因为山峰的特点，在山顶左边是递增的，山顶右边是递减的，所以在二分搜索的时候判断是递增还是递减就可以知道该向哪半边进行二分搜索。
 ```
