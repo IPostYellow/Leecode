@@ -103,6 +103,7 @@ def binarySearch(nums,target):
     return 搜索失败
 ```
 <br>
+
 [33.旋转排序数组](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/33%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84.py)<br>
 思路：搜索区间为[left,right]，最终要找到区间没有元素为止，所以while里面的判断条件是left<=right。这种改变了有序的条件的数组，首先要判断mid到底在哪边，因为mid肯定是在旋转产生的两个有序数组中的某一个之中。如果mid的元素比left的大，说明left在mid都是递增的，否则说明mid到right是递增的。然后再判断二分搜索的下一个区间。
 ```
