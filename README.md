@@ -90,22 +90,93 @@ return 总答案
 ## 二分搜索
 解题模板：<br>
 ```
-    public int binarySearch(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            int mid = left + (right - left) >> 1;
-            if (nums[mid] == target) return mid;
-            else if (nums[mid] > target) {//目标在左边
-                right = mid - 1;
-            } else if (nums[mid] < target) {//目标在右边
-                left = mid + 1;
-            }
-        }
-        return -1;//搜索失败，没有对应的元素
-    }
-
+def binarySearch(nums,target):
+    left,right=0,len(nums)或者len(nums)-1
+    while(left<right或者left<=right):
+        mid = left +(right-left)>>1
+        if (nums[mid]==target):
+            找到了答案
+        elif (nums[mid]<target): #答案在右边的区间
+            left=mid或者mid-1
+        elif (nums[mid]>target): #答案在左边的区间
+            right=mid+1或者mid
+    return 搜索失败
 ```
 <br>
+[33.旋转排序数组](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/33%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84.py)<br>
+思路：搜索区间为[left,right]，最终要找到区间没有元素为止，所以while里面的判断条件是left<=right。这种改变了有序的条件的数组，首先要判断mid到底在哪边，因为mid肯定是在旋转产生的两个有序数组中的某一个之中。如果mid的元素比left的大，说明left在mid都是递增的，否则说明mid到right是递增的。然后再判断二分搜索的下一个区间。
+```
+def search(self, nums, target):
+    left, right = 0, len(nums) - 1
+    while (left <= right):
+        mid = (left + right) // 2
+        if target == nums[mid]:
+            return mid
+        if nums[mid] >= nums[left]:  # 判断mid位置是在递增序列上还是在先递增后递减的序列上
+            if nums[left] <= target < nums[mid]:  
+            # 如果是在递增序列上，left到mid是递增的，那么我们判断目标是否在这个递增区间内，如果在就取这个区间，否则则取右边的区间
+                right = mid - 1
+            else:
+                left = mid + 1
+        else: 
+        #如果不是在递增序列上，则说明mid到right是递增的，那么我们判断目标是否在这个递增区间内，如果在就取这个区间，否则就取左边的区间
+            if nums[mid] < target <= nums[right]:
+                left = mid + 1
+            else:
+                right = mid - 1
+    return -1
+```
+[81.搜索旋转排序数组II](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/81%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84II.py)<br>
+思路：和[33.旋转排序数组](#[33.旋转排序数组])是一类题目，思路是一致的，只不过要返回True和False而已。
+```
+def search(self, nums, target):
+    left, right = 0, len(nums) - 1
+    while (left <= right):
+        mid = (left + right) // 2
+        if target == nums[mid]:
+            return True
+        if nums[left] < nums[mid]:
+            if (nums[left] <= target < nums[mid]):
+                right = mid - 1
+            else:
+                left = mid + 1
+        elif nums[left] == nums[mid]:
+            left=left+1
+        else:
+            if (nums[mid] < target <= nums[right]):
+                left = mid + 1
+            else:
+                right = mid - 1
+    return False
+```
+
+[34.在排序数组中查找元素的第一个最后一个位置](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/34%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE.py)<br>
+思路：和基本的二分搜索差不多，只不过找到了答案还不能直接返回，如果要找到第一个位置，找到了答案还必须搜寻他的左区间，如果找最后一个位置，找到了答案还必须搜索他的右区间。
+```
+def searchRange(self, nums: List[int], target: int) -> List[int]:
+    leftans, rightans = -1, -1 #初始化答案为-1，-1
+    left, right = 0, len(nums) - 1 
+    while (left <= right):
+        mid = left + ((right - left) >> 1)
+        if (nums[mid] == target): 
+            leftans = mid
+            right = mid - 1
+        elif (nums[mid] < target):
+            left = mid + 1
+        elif (nums[mid] > target):
+            right = mid - 1
+    left, right = 0, len(nums) - 1
+    while (left <= right):
+        mid = left + ((right - left) >> 1)
+        if (nums[mid] == target):
+            rightans = mid
+            left = mid + 1
+        elif (nums[mid] < target):
+            left = mid + 1
+        elif (nums[mid] > target):
+            right = mid - 1
+    return [leftans, rightans]
+```
 
 852.山脉数组的峰顶索引
 思路：等价于找数组中的极大值，可以直接遍历然后判断如果前一个元素大于他后面的元素则说明找到了答案。也可以使用二分搜索。因为山峰的特点，在山顶左边是递增的，山顶右边是递减的，所以在二分搜索的时候判断是递增还是递减就可以知道该向哪半边进行二分搜索。
