@@ -126,8 +126,9 @@ def search(self, nums, target):
                 right = mid - 1
     return -1
 ```
+
 [81.搜索旋转排序数组II](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/81%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84II.py)<br>
-思路：和[33.旋转排序数组](#[33.旋转排序数组])是一类题目，思路是一致的，只不过要返回True和False而已。
+思路：和[33.旋转排序数组]是一类题目，思路是一致的，只不过要返回True和False而已。
 ```
 def search(self, nums, target):
     left, right = 0, len(nums) - 1
