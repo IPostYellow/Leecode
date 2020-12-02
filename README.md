@@ -223,6 +223,80 @@ def findMin(self, nums: List[int]) -> int:
         return left
 ```
 
+[1283.使结果不超过阈值的最小除数](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/1283%E4%BD%BF%E7%BB%93%E6%9E%9C%E4%B8%8D%E8%B6%85%E8%BF%87%E9%98%88%E5%80%BC%E7%9A%84%E6%9C%80%E5%B0%8F%E9%99%A4%E6%95%B0.py)<br>
+思路：利用值域的二分实现二分搜索，很显然除数的范围在1~数组里最大值之间取得。所以left和right开始的取值为1和max(nums)。如果mid的结果不比阈值大，说明这个除数还可以再小一点，所以可以继续搜索[1,mid-1]内的除数。如果mid的结果比阈值大，说明除数太小了，必须加大，所以要搜寻[mid+1,right]之间的除数。
+```
+def smallestDivisor(self, nums: List[int], threshold: int) -> int:
+    left, right = 1, max(nums)
+    ans = -1
+    def res_sum(p, nums):
+        return sum([math.ceil(i / p) for i in nums])
+    while (left <= right):
+        mid = left + (right - left >> 1)
+        if res_sum(mid, nums) <= threshold:
+            ans = mid
+            right = mid - 1
+        else:
+            left = mid + 1
+    return ans
+```
+
+[875.爱吃香蕉的珂珂](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/875%E7%88%B1%E5%90%83%E9%A6%99%E8%95%89%E7%9A%84%E7%8F%82%E7%8F%82.py)<br>
+思路：思路上和[1283.使结果不超过阈值的最小除数]类似，就是要找到一个除数K。那么也可以用1283中的方法进行二分查找。
+```
+def minEatingSpeed(self, piles: List[int], H: int) -> int:
+    left,right=1,max(piles)
+    ans=-1
+    def eat_time(K,piles):
+        return sum([math.ceil(i/K) for i in piles])
+    while(left<=right):
+        mid=left+(right-left>>1)
+        if (eat_time(mid,piles)<=H):
+            ans=mid
+            right=mid-1
+        else:
+            left=mid+1
+    return ans
+```
+
+[162.寻找峰值](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/162%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC.py)<br>
+思路：我们可以画出带峰值的曲线观察规律，由于nums[-1]=nums[n]=负无穷。所以这个曲线肯定是两端下降的。那么对于一个mid值，可能存在四种情况。1.左<mid<右，这个时候峰值在右边区间。2.左>mid>右，这个时候峰值在左边。3.左>mid而且右>mid，这种情况左右皆有峰值。4.mid>左且mid>右，mid就是答案。其中第三种答案可以并到前面两种答案之中，本文代码以右判断为例。
+```
+def findPeakElement(self, nums: List[int]) -> int:
+    if len(nums) <= 3:
+        return nums.index(max(nums))
+    left, right = 0, len(nums) - 1
+    while (left < right): # 如果是边界的值，最后是要留下一个数作为峰值的
+        mid = left + (right - left >> 1)
+        if (nums[mid + 1] < nums[mid] and nums[mid] > nums[mid - 1]): #找到了答案
+            return mid
+        elif (nums[mid + 1] > nums[mid]): # 右边更大，说明峰值在右边
+            left = mid + 1
+        elif (nums[mid + 1] < nums[mid]): # 左边更大，说明峰值在左边
+            right = mid - 1
+    return left
+```
+
+[287.寻找重复数](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/287%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0.py)<br>
+思路：对值域进行二分搜索，因为数组长度为n+1，而里面的值是1~n，而且已知必然有一个数字重复出现。那么如果从1~n中取出一个mid值，然后判断数组中小于等于mid值的元素个数，如果小于等于mid值的元素个数大于了mid值，说明里面包含了重复元素，则下一次搜索应该在[1,mid]中，否则应该到(mid,n]中。
+```
+def findDuplicate(self, nums: List[int]) -> int:
+    left,right=1,len(nums)-1
+    def low_num(nums,p):
+        res=0
+        for i in nums:
+            if i<=p:
+                res+=1
+        return res
+    while(left<right):
+        mid=left+(right-left>>1)
+        if (low_num(nums,mid)>mid):
+            right=mid
+        else:
+            left=mid+1
+    return left
+```
+
 ## 回溯法
 解题模板：<br>
 ```
