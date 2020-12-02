@@ -223,6 +223,42 @@ def findMin(self, nums: List[int]) -> int:
         return left
 ```
 
+[1283.使结果不超过阈值的最小除数](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/1283%E4%BD%BF%E7%BB%93%E6%9E%9C%E4%B8%8D%E8%B6%85%E8%BF%87%E9%98%88%E5%80%BC%E7%9A%84%E6%9C%80%E5%B0%8F%E9%99%A4%E6%95%B0.py)<br>
+思路：利用值域的二分实现二分搜索，很显然除数的范围在1~数组里最大值之间取得。所以left和right开始的取值为1和max(nums)。如果mid的结果不比阈值大，说明这个除数还可以再小一点，所以可以继续搜索[1,mid-1]内的除数。如果mid的结果比阈值大，说明除数太小了，必须加大，所以要搜寻[mid+1,right]之间的除数。
+```
+def smallestDivisor(self, nums: List[int], threshold: int) -> int:
+    left, right = 1, max(nums)
+    ans = -1
+    def res_sum(p, nums):
+        return sum([math.ceil(i / p) for i in nums])
+    while (left <= right):
+        mid = left + (right - left >> 1)
+        if res_sum(mid, nums) <= threshold:
+            ans = mid
+            right = mid - 1
+        else:
+            left = mid + 1
+    return ans
+```
+
+[875.爱吃香蕉的珂珂](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/875%E7%88%B1%E5%90%83%E9%A6%99%E8%95%89%E7%9A%84%E7%8F%82%E7%8F%82.py)<br>
+思路：思路上和[1283.使结果不超过阈值的最小除数]类似，就是要找到一个除数K。那么也可以用1283中的方法进行二分查找。
+```
+def minEatingSpeed(self, piles: List[int], H: int) -> int:
+    left,right=1,max(piles)
+    ans=-1
+    def eat_time(K,piles):
+        return sum([math.ceil(i/K) for i in piles])
+    while(left<=right):
+        mid=left+(right-left>>1)
+        if (eat_time(mid,piles)<=H):
+            ans=mid
+            right=mid-1
+        else:
+            left=mid+1
+    return ans
+```
+
 ## 回溯法
 解题模板：<br>
 ```
