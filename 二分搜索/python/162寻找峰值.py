@@ -19,6 +19,7 @@
 链接：https://leetcode-cn.com/problems/find-peak-element
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
+from typing import List
 
 
 class Solution:  # 36ms,13.6mb
@@ -30,4 +31,21 @@ class Solution:  # 36ms,13.6mb
                 right = mid
             else:
                 left = mid + 1
+        return left
+
+
+class Solution2:  # 36ms,13.6mb
+    def findPeakElement(self, nums: List[int]) -> int:
+        if len(nums) <= 3:
+            return nums.index(max(nums))
+        left, right = 0, len(nums) - 1
+        while (left < right):
+            mid = left + (right - left >> 1)
+            if (nums[mid + 1] < nums[mid] and nums[mid] > nums[mid - 1]):
+                return mid
+            elif (nums[mid + 1] > nums[mid]):
+                left = mid + 1
+            elif (nums[mid + 1] < nums[mid]):
+                right = mid - 1
+
         return left

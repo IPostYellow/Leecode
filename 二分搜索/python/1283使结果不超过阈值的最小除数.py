@@ -23,6 +23,9 @@
 '''
 
 import math
+from typing import List
+
+
 class Solution:#340ms,17.9MB
 
     def smallestDivisor(self, nums, threshold):
@@ -47,3 +50,19 @@ class Solution:#340ms,17.9MB
 
 s=Solution()
 print(s.smallestDivisor([19],5))
+
+#简略版本
+class Solution:#296ms,17.7mb
+    def smallestDivisor(self, nums: List[int], threshold: int) -> int:
+        left, right = 1, max(nums)
+        ans = -1
+        def res_sum(p, nums):
+            return sum([math.ceil(i / p) for i in nums])
+        while (left <= right):
+            mid = left + (right - left >> 1)
+            if res_sum(mid, nums) <= threshold:
+                ans = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        return ans

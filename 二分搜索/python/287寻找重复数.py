@@ -35,3 +35,20 @@ class Solution:#60ms,14.8mb
             else:
                 left = mid + 1
         return left
+
+class Solution2:#56ms,14.7mb
+    def findDuplicate(self, nums: List[int]) -> int:
+        left,right=1,len(nums)-1
+        def low_num(nums,p):
+            res=0
+            for i in nums:
+                if i<=p:
+                    res+=1
+            return res
+        while(left<right):
+            mid=left+(right-left>>1)
+            if (low_num(nums,mid)>mid):
+                right=mid
+            else:
+                left=mid+1
+        return left
