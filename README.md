@@ -104,7 +104,7 @@ def binarySearch(nums,target):
 ```
 <br>
 
-[33.旋转排序数组](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/33%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84.py)<br>
+[33.旋转排序数组(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/33%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84.py)<br>
 思路：搜索区间为[left,right]，最终要找到区间没有元素为止，所以while里面的判断条件是left<=right。这种改变了有序的条件的数组，首先要判断mid到底在哪边，因为mid肯定是在旋转产生的两个有序数组中的某一个之中。如果mid的元素比left的大，说明left在mid都是递增的，否则说明mid到right是递增的。然后再判断二分搜索的下一个区间。
 ```
 def search(self, nums, target):
@@ -128,7 +128,7 @@ def search(self, nums, target):
     return -1
 ```
 
-[81.搜索旋转排序数组II](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/81%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84II.py)<br>
+[81.搜索旋转排序数组II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/81%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84II.py)<br>
 思路：和[33.旋转排序数组]是一类题目，思路是一致的，只不过要返回True和False而已。
 ```
 def search(self, nums, target):
@@ -152,7 +152,7 @@ def search(self, nums, target):
     return False
 ```
 
-[34.在排序数组中查找元素的第一个最后一个位置](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/34%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE.py)<br>
+[34.在排序数组中查找元素的第一个最后一个位置(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/34%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE.py)<br>
 思路：和基本的二分搜索差不多，只不过找到了答案还不能直接返回，如果要找到第一个位置，找到了答案还必须搜寻他的左区间，如果找最后一个位置，找到了答案还必须搜索他的右区间。
 ```
 def searchRange(self, nums: List[int], target: int) -> List[int]:
@@ -180,7 +180,7 @@ def searchRange(self, nums: List[int], target: int) -> List[int]:
     return [leftans, rightans]
 ```
 
-[153.寻找旋转排序数组中的最小值](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/153%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC.py)<br>
+[153.寻找旋转排序数组中的最小值(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/153%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC.py)<br>
 思路：因为要在[left,right]中搜索，所以right=len(nums)-1，最终我们要留下那个最小值，所以区间到最后还有一个元素，所以while中left<right。然后对于数组[3,4,5,6,7,0,1,2]，有那么一些情况，如果mid值比left和right的值都要小，类似mid=0,mid=1，则说明最小值在[left,mid]中。如果mid值比left和right的值都要大，比如mid=4,5,6,7，则说明最小值在(mid,right]中。而对于没有旋转的数组[0,1,2,3,4,5,6,7],mid的值肯定是大于left的值小于right的值的，此时的最小值也在[left,mid]中。把两种[left,mid]的情况合并，得出只要mid的值大于right的值的时候应该去(mid,right]区间搜寻，其他情况都应该在[left,mid]中搜寻。
 ```
 def findMin(self, nums: List[int]) -> int:
@@ -194,7 +194,7 @@ def findMin(self, nums: List[int]) -> int:
     return nums[left]
 ```
 
-[154.寻找旋转排序数组中的最小值II](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/154%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BCII.py)<br>
+[154.寻找旋转排序数组中的最小值II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/154%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BCII.py)<br>
 思路：和[153.寻找旋转排序数组中的最小值]的思路类似，只不过在153中讨论的三种情况中，多了一种mid的值等于right的值的情况，这种时候我们只需要将right的值减一即可。相当于去除重复元素。
 ```
 def findMin(self, nums: List[int]) -> int:
@@ -210,7 +210,7 @@ def findMin(self, nums: List[int]) -> int:
     return nums[left]
 ```
 
-[852.山脉数组的峰顶索引](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/852%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95.py)<br>
+[852.山脉数组的峰顶索引(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/852%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95.py)<br>
 思路：等价于找数组中的极大值，可以直接遍历然后判断如果前一个元素大于他后面的元素则说明找到了答案。也可以使用二分搜索。因为山峰的特点，在山顶左边是递增的，山顶右边是递减的，所以在二分搜索的时候判断是递增还是递减就可以知道该向哪半边进行二分搜索。
 ```
         left, right = 0, len(arr) - 1
@@ -223,7 +223,7 @@ def findMin(self, nums: List[int]) -> int:
         return left
 ```
 
-[1283.使结果不超过阈值的最小除数](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/1283%E4%BD%BF%E7%BB%93%E6%9E%9C%E4%B8%8D%E8%B6%85%E8%BF%87%E9%98%88%E5%80%BC%E7%9A%84%E6%9C%80%E5%B0%8F%E9%99%A4%E6%95%B0.py)<br>
+[1283.使结果不超过阈值的最小除数(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/1283%E4%BD%BF%E7%BB%93%E6%9E%9C%E4%B8%8D%E8%B6%85%E8%BF%87%E9%98%88%E5%80%BC%E7%9A%84%E6%9C%80%E5%B0%8F%E9%99%A4%E6%95%B0.py)<br>
 思路：利用值域的二分实现二分搜索，很显然除数的范围在1~数组里最大值之间取得。所以left和right开始的取值为1和max(nums)。如果mid的结果不比阈值大，说明这个除数还可以再小一点，所以可以继续搜索[1,mid-1]内的除数。如果mid的结果比阈值大，说明除数太小了，必须加大，所以要搜寻[mid+1,right]之间的除数。
 ```
 def smallestDivisor(self, nums: List[int], threshold: int) -> int:
@@ -241,7 +241,7 @@ def smallestDivisor(self, nums: List[int], threshold: int) -> int:
     return ans
 ```
 
-[875.爱吃香蕉的珂珂](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/875%E7%88%B1%E5%90%83%E9%A6%99%E8%95%89%E7%9A%84%E7%8F%82%E7%8F%82.py)<br>
+[875.爱吃香蕉的珂珂(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/875%E7%88%B1%E5%90%83%E9%A6%99%E8%95%89%E7%9A%84%E7%8F%82%E7%8F%82.py)<br>
 思路：思路上和[1283.使结果不超过阈值的最小除数]类似，就是要找到一个除数K。那么也可以用1283中的方法进行二分查找。
 ```
 def minEatingSpeed(self, piles: List[int], H: int) -> int:
@@ -259,7 +259,7 @@ def minEatingSpeed(self, piles: List[int], H: int) -> int:
     return ans
 ```
 
-[162.寻找峰值](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/162%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC.py)<br>
+[162.寻找峰值(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/162%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC.py)<br>
 思路：我们可以画出带峰值的曲线观察规律，由于nums[-1]=nums[n]=负无穷。所以这个曲线肯定是两端下降的。那么对于一个mid值，可能存在四种情况。1.左<mid<右，这个时候峰值在右边区间。2.左>mid>右，这个时候峰值在左边。3.左>mid而且右>mid，这种情况左右皆有峰值。4.mid>左且mid>右，mid就是答案。其中第三种答案可以并到前面两种答案之中，本文代码以右判断为例。
 ```
 def findPeakElement(self, nums: List[int]) -> int:
@@ -277,7 +277,7 @@ def findPeakElement(self, nums: List[int]) -> int:
     return left
 ```
 
-[287.寻找重复数](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/287%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0.py)<br>
+[287.寻找重复数(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/287%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0.py)<br>
 思路：对值域进行二分搜索，因为数组长度为n+1，而里面的值是1~n，而且已知必然有一个数字重复出现。那么如果从1~n中取出一个mid值，然后判断数组中小于等于mid值的元素个数，如果小于等于mid值的元素个数大于了mid值，说明里面包含了重复元素，则下一次搜索应该在[1,mid]中，否则应该到(mid,n]中。
 ```
 def findDuplicate(self, nums: List[int]) -> int:
@@ -308,7 +308,7 @@ for 状态1 in 状态1的所有可能取值:
 ```
 <br>
 
-[509.斐波那契数](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/509%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0.py)<br>
+[509.斐波那契数(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/509%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0.py)<br>
 思路：由斐波那契数的定义可以知道，f[0]=0,f[1]=1,f[i]=f[i-1]+f[i-2](i>=2)。这个完美符合动态规划的特征，所以直接令dp=[0 for i in range(N + 1)],dp[1]=1，然后dp[N]=dp[N-1]+dp[N-2],从1开始递推到dp[N]即可。
 ```
 def fib(self, N: int) -> int:
@@ -321,7 +321,7 @@ def fib(self, N: int) -> int:
     return dp[N]
 ```
 
-[322.零钱兑换](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/322.%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2.py)<br>
+[322.零钱兑换(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/322.%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2.py)<br>
 思路：如果设f[n]为金钱总数为n所需要的最少硬币数，如果硬币的面额有[1,2,5],则f[n]=min(f[n-1]+1,f[n-2]+1,f[n-5]+1)。如果n-硬币面额小于0的话，则不考虑。f[0]很显然为0，因为金钱总数为0的最少硬币数肯定是0。初始化所有f[i](i<=n)为-1，然后迭代将满足递推的所有f计算出来，最后返回f[n]。
 ```
 def coinChange(self, coins: List[int], amount: int) -> int:
@@ -359,7 +359,7 @@ def coinChange(self, coins: List[int], amount: int) -> int:
         return min(res)
 ```
 
-[300.最长上升子序列](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/300.%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
+[300.最长上升子序列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/300.%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
 思路：子序列是可以不挨着的。我们假设dp[i]表示以第i个数字结尾的最长上升子序列长度。初始化所有dp的值为1（因为怎么样都肯定有1个最长上升子序列是一个数），每次遍历i以前的数字，如果第i个数字大于之前的某个数而且那个数的最长上升子序列长度比dp[i]的值大，则将其+1赋值给dp[i]，否则就继续遍历。最终找到最大的dp值。
 ```
 def lengthOfLIS(self, nums: List[int]) -> int:
@@ -376,6 +376,7 @@ return max(dp)
 链接：https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/zui-chang-shang-sheng-zi-xu-lie-dong-tai-gui-hua-e/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+<br>
 ```
 def lengthOfLIS(self, nums: List[int]) -> int:
 tmp = [nums[0]]
@@ -396,8 +397,9 @@ for i in nums[1:]:
 	tmp[left]=i
 return len(tmp)
 ```
+<br>
 
-[72.编辑距离](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/72.%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.py)<br>
+[72.编辑距离(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/72.%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.py)<br>
 思路：这种涉及到两个字符串的动态规划法都应该画个数组图。<br>
 ```
    无 r o s
