@@ -297,6 +297,69 @@ def findDuplicate(self, nums: List[int]) -> int:
     return left
 ```
 
+## 动态规划
+解题模板：<br>
+```
+dp=初始化条件 #一般是个多维数组
+for 状态1 in 状态1的所有可能取值:
+	for 状态2 in 状态2所有可能的取值
+    	搞不好还得for
+        dp[状态1][状态2]=递推式
+```
+<br>
+
+[509.斐波那契数](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/509%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0.py)<br>
+思路：由斐波那契数的定义可以知道，f[0]=0,f[1]=1,f[i]=f[i-1]+f[i-2](i>=2)。这个完美符合动态规划的特征，所以直接令dp=[0 for i in range(N + 1)],dp[1]=1，然后dp[N]=dp[N-1]+dp[N-2],从1开始递推到dp[N]即可。
+```
+def fib(self, N: int) -> int:
+    if N <= 1:
+        return N
+    dp = [0 for i in range(N + 1)]
+    dp[1] = 1
+    for i in range(2, N + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]
+    return dp[N]
+```
+
+[322.零钱兑换](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/322.%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2.py)<br>
+思路：如果设f[n]为金钱总数为n所需要的最少硬币数，如果硬币的面额有[1,2,5],则f[n]=min(f[n-1]+1,f[n-2]+1,f[n-5]+1)。如果n-硬币面额小于0的话，则不考虑。f[0]很显然为0，因为金钱总数为0的最少硬币数肯定是0。初始化所有f[i](i<=n)为-1，然后迭代将满足递推的所有f计算出来，最后返回f[n]。
+```
+def coinChange(self, coins: List[int], amount: int) -> int:
+    f = [-1 for i in range(amount + 1)]
+    f[0] = 0
+    for i in range(1, amount + 1):
+        tmp = []
+        for j in coins:
+            if i - j >= 0 and f[i - j] != -1:
+                tmp.append(f[i - j])
+        if tmp == []:
+            f[i] = -1
+        else:
+            f[i] = min(tmp) + 1
+    return f[amount]
+```
+<br>
+另外，此题也可以用回溯法。根据回溯法的模板也可以写出如下程序，但是在LeetCode上会超时。
+```
+def coinChange(self, coins: List[int], amount: int) -> int:
+    res = []
+    def backtrack(start, sum, track):
+        for i in range(start, len(coins)):
+            if sum + coins[i] == amount:
+                res.append(len(track) + 1)
+                return
+            elif sum + coins[i] < amount:
+                backtrack(i, sum + coins[i], track + [coins[i]])
+            elif sum + coins[i] > amount:
+                return
+    backtrack(0, 0, [])
+    if res == []:
+        return -1
+    else:
+        return min(res)
+```
+
+
 ## 回溯法
 解题模板：<br>
 ```
