@@ -338,8 +338,11 @@ def coinChange(self, coins: List[int], amount: int) -> int:
             f[i] = min(tmp) + 1
     return f[amount]
 ```
+
 <br>
 另外，此题也可以用回溯法。根据回溯法的模板也可以写出如下程序，但是在LeetCode上会超时。
+<br>
+
 ```
 def coinChange(self, coins: List[int], amount: int) -> int:
     res = []
@@ -361,6 +364,7 @@ def coinChange(self, coins: List[int], amount: int) -> int:
 
 [300.最长上升子序列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/300.%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
 思路：子序列是可以不挨着的。我们假设dp[i]表示以第i个数字结尾的最长上升子序列长度。初始化所有dp的值为1（因为怎么样都肯定有1个最长上升子序列是一个数），每次遍历i以前的数字，如果第i个数字大于之前的某个数而且那个数的最长上升子序列长度比dp[i]的值大，则将其+1赋值给dp[i]，否则就继续遍历。最终找到最大的dp值。
+<br>
 ```
 def lengthOfLIS(self, nums: List[int]) -> int:
 dp = [1 for i in range(len(nums))]
@@ -371,11 +375,11 @@ for i in range(len(nums)):
 return max(dp)
 ```
 <br>
-以上方法的时间复杂度接近O(n^2)，要想将复杂度降低到O(nlogn)，则要引入二分的思想。这种思路是LeetCode某大佬的。新建数组 tmp，用于保存最长上升子序列。对原序列进行遍历，将每位元素二分插入 tmp 中。如果 tmp 中元素都比它小，将它插到最后否则，用它覆盖掉比它大的元素中最小的那个。总之，思想就是让 tmp 中存储比较小的元素。这样，tmp 未必是真实的最长上升子序列，但长度是对的。
-作者：coldme-2
-链接：https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/zui-chang-shang-sheng-zi-xu-lie-dong-tai-gui-hua-e/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+以上方法的时间复杂度接近O(n^2)，要想将复杂度降低到O(nlogn)，则要引入二分的思想。这种思路是LeetCode某大佬的。新建数组 tmp，用于保存最长上升子序列。对原序列进行遍历，将每位元素二分插入 tmp 中。如果 tmp 中元素都比它小，将它插到最后否则，用它覆盖掉比它大的元素中最小的那个。总之，思想就是让 tmp 中存储比较小的元素。这样，tmp 未必是真实的最长上升子序列，但长度是对的。<br>
+作者：coldme-2<br>
+链接：https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/zui-chang-shang-sheng-zi-xu-lie-dong-tai-gui-hua-e/<br>
+来源：力扣（LeetCode）<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>
 <br>
 ```
 def lengthOfLIS(self, nums: List[int]) -> int:
