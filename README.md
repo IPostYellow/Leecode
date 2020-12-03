@@ -365,18 +365,18 @@ def coinChange(self, coins: List[int], amount: int) -> int:
 [300.最长上升子序列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/300.%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
 思路：子序列是可以不挨着的。我们假设dp[i]表示以第i个数字结尾的最长上升子序列长度。初始化所有dp的值为1（因为怎么样都肯定有1个最长上升子序列是一个数），每次遍历i以前的数字，如果第i个数字大于之前的某个数而且那个数的最长上升子序列长度比dp[i]的值大，则将其+1赋值给dp[i]，否则就继续遍历。最终找到最大的dp值。
 
-<br>
+
 ```
 def lengthOfLIS(self, nums: List[int]) -> int:
-dp = [1 for i in range(len(nums))]
-for i in range(len(nums)):
-    for j in range(i):
-	if nums[i] > nums[j]:
-	    dp[i] = max(dp[i], dp[j] + 1)
-return max(dp)
+    dp = [1 for i in range(len(nums))]
+    for i in range(len(nums)):
+        for j in range(i):
+	    if nums[i] > nums[j]:
+	        dp[i] = max(dp[i], dp[j] + 1)
+    return max(dp)
 ```
-<br>
 
+<br>
 以上方法的时间复杂度接近O(n^2)，要想将复杂度降低到O(nlogn)，则要引入二分的思想。这种思路是LeetCode某大佬的。新建数组 tmp，用于保存最长上升子序列。对原序列进行遍历，将每位元素二分插入 tmp 中。如果 tmp 中元素都比它小，将它插到最后否则，用它覆盖掉比它大的元素中最小的那个。总之，思想就是让 tmp 中存储比较小的元素。这样，tmp 未必是真实的最长上升子序列，但长度是对的。<br>
 作者：coldme-2<br>
 链接：https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/zui-chang-shang-sheng-zi-xu-lie-dong-tai-gui-hua-e/<br>
@@ -385,9 +385,9 @@ return max(dp)
 
 ```
 def lengthOfLIS(self, nums: List[int]) -> int:
-tmp = [nums[0]]
-for i in nums[1:]:
-    if i > tmp[-1]:
+   tmp = [nums[0]]
+   for i in nums[1:]:
+      if i > tmp[-1]:
 	tmp.append(i)
     else:
 	left, right = 0, len(tmp) - 1
@@ -401,9 +401,9 @@ for i in nums[1:]:
 		left=mid
 		break
 	tmp[left]=i
-return len(tmp)
+    return len(tmp)
 ```
-<br>
+
 
 [72.编辑距离(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/72.%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.py)<br>
 思路：这种涉及到两个字符串的动态规划法都应该画个数组图。
@@ -418,24 +418,24 @@ e  5  4 4 3
 ```
 
 <br>
-由这个图所示，很显然当末尾两个字符相等的时候，比如ho和ro，他的最短编辑次数应该为对角线，相当于h->r的次数。如果两个字符不相等，比如hor->ro。要么可以先把hor->r，也就是2步，再+1步到ro，这里为3步。要么可以把hor变成ho这里为1步，然后再从ho变为ro，这里需要1步，总共2步。要么可以想hor的ho部分变成r需要2步，然后r部分直接变成o得到ro，这里又需要1步，总共为3步。然后这三种情况中取最少的步数，也就是两步，所以可得hor->ro的步数为min(hor->ho步数+1，or->r步数+1,hor->r步数+1)=2
+由这个图所示，很显然当末尾两个字符相等的时候，比如ho和ro，他的最短编辑次数应该为对角线，相当于h->r的次数。如果两个字符不相等，比如hor->ro。要么可以先把hor->r，也就是2步，再+1步到ro，这里为3步。要么可以把hor变成ho这里为1步，然后再从ho变为ro，这里需要1步，总共2步。要么可以想hor的ho部分变成r需要2步，然后r部分直接变成o得到ro，这里又需要1步，总共为3步。然后这三种情况中取最少的步数，也就是两步，所以可得hor->ro的步数为min(hor->ho步数+1，or->r步数+1,hor->r步数+1)=2。
 
 ```
 def minDistance(self, word1: str, word2: str) -> int:
-len_word1 = len(word1)
-len_word2 = len(word2)
-dp = [[0 for i in range(len_word2 + 1)] for j in range(len_word1 + 1)]
-for i in range(len_word1+1):
-    dp[i][0] = i
-for i in range(len_word2+1):
-    dp[0][i] = i
-for row in range(1, len_word1 + 1):
-    for col in range(1, len_word2 + 1):
-	if word1[row - 1] == word2[col - 1]:
-	    dp[row][col] = dp[row - 1][col - 1]
-	else:
-	    dp[row][col] = min(dp[row - 1][col], dp[row][col - 1], dp[row - 1][col - 1]) + 1
-return dp[len_word1][len_word2]
+    len_word1 = len(word1)
+    len_word2 = len(word2)
+    dp = [[0 for i in range(len_word2 + 1)] for j in range(len_word1 + 1)]
+    for i in range(len_word1+1):
+        dp[i][0] = i
+    for i in range(len_word2+1):
+        dp[0][i] = i
+    for row in range(1, len_word1 + 1):
+        for col in range(1, len_word2 + 1):
+	    if word1[row - 1] == word2[col - 1]:
+	        dp[row][col] = dp[row - 1][col - 1]
+	    else:
+	        dp[row][col] = min(dp[row - 1][col], dp[row][col - 1], dp[row - 1][col - 1]) + 1
+    return dp[len_word1][len_word2]
 ```
 
 
