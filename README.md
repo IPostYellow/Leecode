@@ -278,7 +278,7 @@ def findPeakElement(self, nums: List[int]) -> int:
 ```
 
 [287.寻找重复数(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/python/287%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0.py)<br>
-思路：对值域进行二分搜索，因为数组长度为n+1，而里面的值是1~n，而且已知必然有一个数字重复出现。那么如果从1~n中取出一个mid值，然后判断数组中小于等于mid值的元素个数，如果小于等于mid值的元素个数大于了mid值，说明里面包含了重复元素，则下一次搜索应该在[1,mid]中，否则应该到(mid,n]中。
+思路：对值域进行二分搜索，因为数组长度为n+1，而里面的值是1到n，而且已知必然有一个数字重复出现。那么如果从1到n中取出一个mid值，然后判断数组中小于等于mid值的元素个数，如果小于等于mid值的元素个数大于了mid值，说明里面包含了重复元素，则下一次搜索应该在[1,mid]中，否则应该到(mid,n]中。
 ```
 def findDuplicate(self, nums: List[int]) -> int:
     left,right=1,len(nums)-1
