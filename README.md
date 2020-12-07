@@ -528,20 +528,6 @@ def longestPalindromeSubseq(self, s: str) -> int:
         return dp[0][0][len(nums)-1] > dp[1][0][len(nums)-1]
 ```
 
-<br>
-如果想要节省空间，可以这样理解，首先这次我拿了piles[i]或者piles[j]，但是下一次我会损失dp[j]
-```
-class Solution:
-    def stoneGame(self, piles: List[int]) -> bool:
-        dp = piles.copy()
-
-        for i in range(len(piles) - 1, -1, -1):  # 从下往上遍历
-            for j in range(i, len(piles)):       # 从前往后遍历
-                dp[j] = max(piles[i] - dp[j], piles[j] - dp[j - 1])  # 计算之后覆盖一维数组的对应位置
-
-        return dp[len(piles) - 1] > 0
-```
-
 ## 回溯法
 解题模板：<br>
 ```
