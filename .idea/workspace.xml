@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7fb7187-eeef-4c85-8010-f1f0f5246c3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/659.分割数组为连续子序列.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/动态规划/python/486.预测赢家.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/动态规划/python/516.最长回文子序列.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/动态规划/python/877.石子游戏.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/动态规划/python/887.鸡蛋掉落.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/动态规划/python/1143.最长公共子序列.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -179,7 +175,7 @@
       <workItem from="1605618047368" duration="409000" />
       <workItem from="1606547661286" duration="68000" />
       <workItem from="1606548242376" duration="2707000" />
-      <workItem from="1606897550144" duration="20633000" />
+      <workItem from="1606897550144" duration="22676000" />
     </task>
     <task id="LOCAL-00001" summary="新增852题目的解题思路">
       <created>1605618442081</created>
@@ -231,6 +227,11 @@
           <url>file://$PROJECT_DIR$/动态规划/python/516.最长回文子序列.py</url>
           <line>30</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/动态规划/python/877.石子游戏.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
