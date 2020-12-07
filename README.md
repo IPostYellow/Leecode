@@ -376,6 +376,7 @@ def lengthOfLIS(self, nums: List[int]) -> int:
     return max(dp)
 ```
 
+
 <br>
 以上方法的时间复杂度接近O(n^2)，要想将复杂度降低到O(nlogn)，则要引入二分的思想。这种思路是LeetCode某大佬的。新建数组 tmp，用于保存最长上升子序列。对原序列进行遍历，将每位元素二分插入 tmp 中。如果 tmp 中元素都比它小，将它插到最后否则，用它覆盖掉比它大的元素中最小的那个。总之，思想就是让 tmp 中存储比较小的元素。这样，tmp 未必是真实的最长上升子序列，但长度是对的。<br>
 作者：coldme-2<br>
@@ -438,6 +439,23 @@ def minDistance(self, word1: str, word2: str) -> int:
     return dp[len_word1][len_word2]
 ```
 
+[516.最长回文子序列](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
+思路：最长回文子序列问题，碰到相同的字符就说明可以成为最长回文子序列中的一员。dp[i][j]表示在i到j的字符串里最长的回文子序列长度。如果i和j的字符相等，那dp[i][j]长度是dp[i+1][j-1]+2，否则就相当于这两个字符不为回文字符，dp[i][j]应当是dp[i+1][j]和dp[i][j-1]中最大的一个。初始条件很显然当i=j的时候，指向的是同一个字符，此时的回文只有自己，为1。
+```
+def longestPalindromeSubseq(self, s: str) -> int:
+    tmp = []
+    dp = [[0 for i in range(len(s))] for j in range(len(s))]
+    for i in range(len(s)):
+        dp[i][i] = 1
+    for i in range(len(s) - 1, -1, -1):
+        for j in range(i + 1, len(s)):
+	    if s[i] == s[j]:
+	        dp[i][j] = dp[i + 1][j - 1] + 2
+	        tmp.append(s[i])
+	    else:
+	        dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])
+    return dp[0][len(s) - 1]
+```
 
 ## 回溯法
 解题模板：<br>
