@@ -439,7 +439,7 @@ def minDistance(self, word1: str, word2: str) -> int:
     return dp[len_word1][len_word2]
 ```
 
-[516.最长回文子序列](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
+[516.最长回文子序列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
 思路：最长回文子序列问题，碰到相同的字符就说明可以成为最长回文子序列中的一员。dp[i][j]表示在i到j的字符串里最长的回文子序列长度。如果i和j的字符相等，那dp[i][j]长度是dp[i+1][j-1]+2，否则就相当于这两个字符不为回文字符，dp[i][j]应当是dp[i+1][j]和dp[i][j-1]中最大的一个。初始条件很显然当i=j的时候，指向的是同一个字符，此时的回文只有自己，为1。
 ```
 def longestPalindromeSubseq(self, s: str) -> int:
@@ -455,6 +455,49 @@ def longestPalindromeSubseq(self, s: str) -> int:
 	    else:
 	        dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])
     return dp[0][len(s) - 1]
+```
+
+[486.预测赢家(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/486.%E9%A2%84%E6%B5%8B%E8%B5%A2%E5%AE%B6.py)<br>
+思路：这种问题涉及到了两组数组。我们假设dp1[i][j]为先手情况下，从数组[i]到数组[j]中，所能取得的最高分。dp2[i][j]为后手情况下，从数组[i]到数组[j]能取得的最高分。很显然，dp1[i][j]=max(nums[i]+dp2[i+1][j],nums[j]+dp2[i][j-1])。因为这次先手拿了以后，下一次拿自己就相当于是后手了，所以是+dp2的值。dp2的取值取决于dp1的选择，如果dp1选了i，则dp2[i][j]=dp1[i + 1][j],相当于在数组[i+1]到数组[j]做先手。如果dp1选择j，则 dp2[i][j]=dp1[i][j-1]，相当于在数组[i]到数组[j-1]里做先手。初始条件，很显然当i=j的时候，先手会拿走唯一的值，而后手什么也没得拿了。
+```python
+    def PredictTheWinner(self, nums: List[int]) -> bool:
+        dp1 = [[0 for i in range(len(nums))] for j in range(len(nums))]
+        dp2 = [[0 for i in range(len(nums))] for j in range(len(nums))]
+        for i in range(len(nums)):
+            dp1[i][i] = nums[i]
+            dp2[i][i] = 0
+        for i in range(len(nums) - 1, -1, -1):
+            for j in range(i + 1, len(nums)):
+                left = nums[i] + dp2[i + 1][j]  # 先手的选了以后，下一次就相当于变成了后手，所以要加后手的
+                right = nums[j] + dp2[i][j - 1]
+                if left > right:
+                    dp1[i][j] = left
+                    dp2[i][j] = dp1[i + 1][j]  # 同理，这次后手的，下一次就会变成先手了
+                else:
+                    dp1[i][j] = right
+                    dp2[i][j] = dp1[i][j - 1]
+        return dp1[0][len(nums) - 1] >= dp2[0][len(nums) - 1]
+```
+
+[877.石子游戏(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/877.%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F.py)<br>
+思路：和[486.预测赢家]题目基本上一样，只不过多了不会平局的条件，但是这种动态规划法没有区别。
+```
+    def stoneGame(self, nums: List[int]) -> bool:
+        dp = [[[0 for i in range(len(nums))] for j in range(len(nums))] for k in range(2)]
+        for i in range(len(nums)):
+            dp[0][i][i] = nums[i]
+            dp[1][i][i] = 0
+        for i in range(len(nums) - 1, -1, -1):
+            for j in range(i + 1, len(nums)):
+                left = nums[i] + dp[1][i + 1][j]
+                right = nums[j] + dp[1][i][j - 1]
+                if left > right:
+                    dp[0][i][j] = left
+                    dp[1][i][j] = dp[0][i + 1][j] # 后手那个在这次先手选了以后就会变成先手了
+                else:
+                    dp[0][i][j] = right
+                    dp[1][i][j] = dp[0][i][j - 1]
+        return dp[0][0][len(nums)-1] > dp[1][0][len(nums)-1]
 ```
 
 ## 回溯法
