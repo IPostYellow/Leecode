@@ -439,6 +439,33 @@ def minDistance(self, word1: str, word2: str) -> int:
     return dp[len_word1][len_word2]
 ```
 
+[1143.最长公共子序列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/1143.%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
+思路：这种涉及到两个字符串的动态规划法都应该画个数组图。
+```
+   无 a c e
+无 0  0 0 0
+a  0  1 1 1
+b  0  1 1 1
+c  0  1 2 2
+d  0  1 2 2
+e  0  1 2 3
+```
+
+<br>
+设dp[i][j]表示在text1[:i]和text2[:j]的情况下的最长公共子序列长度，那么很显然，当text1[i]=text2[j]的时候，dp[i][j]=dp[i-1][j-1]+1。如果不相等，则应该是在dp[i-1][j]和dp[i][j-1]中取最大者
+```python
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        dp = [[0 for i in range(len(text2) + 1)] for j in range(len(text1) + 1)]
+        for i in range(1, len(text1) + 1):
+            for j in range(1, len(text2) + 1):
+                if text1[i - 1] == text2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1] + 1
+                else:
+                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+        return dp[len(text1)][len(text2)]
+
+```
+
 [516.最长回文子序列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
 思路：最长回文子序列问题，碰到相同的字符就说明可以成为最长回文子序列中的一员。dp[i][j]表示在i到j的字符串里最长的回文子序列长度。如果i和j的字符相等，那dp[i][j]长度是dp[i+1][j-1]+2，否则就相当于这两个字符不为回文字符，dp[i][j]应当是dp[i+1][j]和dp[i][j-1]中最大的一个。初始条件很显然当i=j的时候，指向的是同一个字符，此时的回文只有自己，为1。
 ```
