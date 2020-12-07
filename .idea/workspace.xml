@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7fb7187-eeef-4c85-8010-f1f0f5246c3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/动态规划/python/300.最长上升子序列.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/动态规划/python/72.编辑距离.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/659.分割数组为连续子序列.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/动态规划/python/486.预测赢家.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/动态规划/python/516.最长回文子序列.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/动态规划/python/877.石子游戏.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/动态规划/python/887.鸡蛋掉落.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +45,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.72.编辑距离">
-    <configuration name="300.最长上升子序列" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.877.石子游戏">
+    <configuration name="486.预测赢家" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myleetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -56,7 +59,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/300.最长上升子序列.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/486.预测赢家.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -65,7 +68,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="322.零钱兑换" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="516.最长回文子序列" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myleetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -78,7 +81,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/322.零钱兑换.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/516.最长回文子序列.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="659.分割数组为连续子序列" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myleetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/659.分割数组为连续子序列.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,11 +134,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="877.石子游戏" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myleetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/动态规划/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/877.石子游戏.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.877.石子游戏" />
+        <item itemvalue="Python.486.预测赢家" />
+        <item itemvalue="Python.516.最长回文子序列" />
+        <item itemvalue="Python.659.分割数组为连续子序列" />
         <item itemvalue="Python.72.编辑距离" />
-        <item itemvalue="Python.300.最长上升子序列" />
-        <item itemvalue="Python.322.零钱兑换" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +179,7 @@
       <workItem from="1605618047368" duration="409000" />
       <workItem from="1606547661286" duration="68000" />
       <workItem from="1606548242376" duration="2707000" />
-      <workItem from="1606897550144" duration="6927000" />
+      <workItem from="1606897550144" duration="20633000" />
     </task>
     <task id="LOCAL-00001" summary="新增852题目的解题思路">
       <created>1605618442081</created>
@@ -173,19 +222,25 @@
           <line>34</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/659.分割数组为连续子序列.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/动态规划/python/516.最长回文子序列.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="row" language="Python" />
-        <watch expression="col" language="Python" />
-        <watch expression="word1" language="Python" />
-        <watch expression="word2" language="Python" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/leetcode$516_.coverage" NAME="516.最长回文子序列 Coverage Results" MODIFIED="1607303546733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
+    <SUITE FILE_PATH="coverage/leetcode$659_.coverage" NAME="659.分割数组为连续子序列 Coverage Results" MODIFIED="1607048136011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/leetcode$877_.coverage" NAME="877.石子游戏 Coverage Results" MODIFIED="1607309714771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$300_.coverage" NAME="300.最长上升子序列 Coverage Results" MODIFIED="1606980417312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
+    <SUITE FILE_PATH="coverage/leetcode$486_.coverage" NAME="486.预测赢家 Coverage Results" MODIFIED="1607308635462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$322_.coverage" NAME="322.零钱兑换 Coverage Results" MODIFIED="1606977916491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$72_.coverage" NAME="72.编辑距离 Coverage Results" MODIFIED="1606983400920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
   </component>
