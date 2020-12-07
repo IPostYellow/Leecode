@@ -452,7 +452,9 @@ e  0  1 2 3
 ```
 
 <br>
-设dp[i][j]表示在text1[:i]和text2[:j]的情况下的最长公共子序列长度，那么很显然，当text1[i]=text2[j]的时候，dp[i][j]=dp[i-1][j-1]+1。如果不相等，则应该是在dp[i-1][j]和dp[i][j-1]中取最大者
+设dp[i][j]表示在text1[:i]和text2[:j]的情况下的最长公共子序列长度，那么很显然，当text1[i]=text2[j]的时候，dp[i][j]=dp[i-1][j-1]+1。如果不相等，则应该是在dp[i-1][j]和dp[i][j-1]中取最大者。
+<br>
+
 ```python
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         dp = [[0 for i in range(len(text2) + 1)] for j in range(len(text1) + 1)]
@@ -463,7 +465,6 @@ e  0  1 2 3
                 else:
                     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
         return dp[len(text1)][len(text2)]
-
 ```
 
 [516.最长回文子序列(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.py)<br>
