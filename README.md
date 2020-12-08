@@ -712,6 +712,7 @@ def isValid(row, col, cheer):
             return False
     return True
 ```
+
 [980.不同路径III](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/980.%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84III.py)<br>
 思路：回溯法模拟机器人走过的所有路径，关键要确定选择列表和路径以及结束条件，很显然结束条件就是我的步数走完了所有可走的格子并且到了终点，即i == end[0] and j == end[1] and cur_step == step+1。选择列表为往上下左右走，剪枝则很明显是减去走到了非法路径和障碍物的路径和已经走过的路径。
 ```
@@ -735,4 +736,27 @@ def is_valid(i, j, grid): #判断是否要剪枝
         return True
     else:
         return False
+```
+
+[842.将数组拆分成斐波那契序列](https://github.com/IPostYellow/Leecode/blob/master/%E5%9B%9E%E6%BA%AF/python/842.%E5%B0%86%E6%95%B0%E7%BB%84%E6%8B%86%E5%88%86%E6%88%90%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%BA%8F%E5%88%97.py)<br>
+思路：首先理解题目，题目的意思是给定一串字符串数字比如"123456789",要将其拆分成["123","456","789"]这种大于等于三个元素，并且后面的元素是由前面的两个元素的和组成的列表。那么可以使用回溯法不断选取数字。选择列表即整个字符串里，index后面的部分。值得注意的是还得判断字符"0"只能单独作0使用。
+```python
+        def trackback(index):
+            if index == len(S): #遍历完整个字符串了，看看答案的列表长度是否大于2，如果是则说明找到了这个答案，否则就没有找到
+                return len(res) > 2
+            s = 0
+            for i in range(index, len(S)):
+                s = s * 10 + int(S[i]) #将字符转化成数字，存储当前选了的字符数字的值
+                if S[index] == "0" and i > index: #一定要先判断前面为0的，判断完如果出现01这种情况直接剪枝
+                    break
+                elif s > 2 ** 31 - 1: #题目给的范围
+                    break
+                elif (len(res) > 2) and (res[-1] + res[-2] < s): #当前的字符的值都已经超过了res数组的后两位，则不可能使得res[-1]+res[-2]==s了，直接剪枝
+                    break
+                elif (len(res) < 2) or (res[-1] + res[-2] == s): #符合条件的合法部分
+                    res.append(s) #选择当前s
+                    if trackback(i + 1): # 目前为止是到i的字符合法被装进了res里，递归判断i+1到len(S)的符不符合条件了
+                        return True
+                    res.pop() # 撤销选择
+            return False
 ```
