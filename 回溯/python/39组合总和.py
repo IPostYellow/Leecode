@@ -37,7 +37,6 @@ class Solution:  # 52ms,13.6mb
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         nums = sorted(candidates)
         result = []
-
         def trackback(start, sum, track):
             for i in range(start, len(nums)):
                 if sum + nums[i] == target:  # 满足则加入答案
@@ -47,7 +46,6 @@ class Solution:  # 52ms,13.6mb
                     trackback(i, sum + nums[i], track + [nums[i]])  # start=i,表示数字可以重复使用，这样一来就可以原地把所需要的自己都取掉
                 if sum + nums[i] > target:  # 满足大于则直接剪枝
                     return
-
         trackback(0, 0, [])
 
         return result

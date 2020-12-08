@@ -35,3 +35,33 @@ class Solution:#44ms,14.3MB
             else:
                 left = mid + 1
         return [start, end]
+
+
+class Solution2: #40ms,14.3mb
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        leftans, rightans = -1, -1
+        left, right = 0, len(nums) - 1
+        while (left <= right):
+            mid = left + ((right - left) >> 1)
+            if (nums[mid] == target):
+                leftans = mid
+                right = mid - 1
+            elif (nums[mid] < target):
+                left = mid + 1
+            elif (nums[mid] > target):
+                right = mid - 1
+        left, right = 0, len(nums) - 1
+        while (left <= right):
+            mid = left + ((right - left) >> 1)
+            if (nums[mid] == target):
+                rightans = mid
+                left = mid + 1
+            elif (nums[mid] < target):
+                left = mid + 1
+            elif (nums[mid] > target):
+                right = mid - 1
+
+        return [leftans, rightans]
+
+s=Solution2()
+print(s.searchRange([5,7,7,8,8,10],8))

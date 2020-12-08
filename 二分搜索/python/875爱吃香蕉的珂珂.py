@@ -27,6 +27,8 @@ piles.length <= H <= 10^9
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 import math
+from typing import List
+
 
 class Solution:#520ms,14.7mb
     def eatbanana(self, piles, K):
@@ -58,3 +60,19 @@ class Solution:#520ms,14.7mb
 
 s=Solution()
 print(s.minEatingSpeed([3,6,7,11],8))
+
+#简略版本
+class Solution2:#460ms,14.7mb
+    def minEatingSpeed(self, piles: List[int], H: int) -> int:
+        left,right=1,max(piles)
+        ans=-1
+        def eat_time(K,piles):
+            return sum([math.ceil(i/K) for i in piles])
+        while(left<=right):
+            mid=left+(right-left>>1)
+            if (eat_time(mid,piles)<=H):
+                ans=mid
+                right=mid-1
+            else:
+                left=mid+1
+        return ans

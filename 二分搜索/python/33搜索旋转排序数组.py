@@ -24,6 +24,7 @@ nums 肯定会在某个点上旋转
 链接：https://leetcode-cn.com/problems/search-in-rotated-sorted-array
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
+from typing import List
 
 
 class Solution:  # 36ms,13.7mb
@@ -34,11 +35,11 @@ class Solution:  # 36ms,13.7mb
             if target == nums[mid]:
                 return mid
             if nums[mid] >= nums[left]:  # 判断mid位置是在递增序列上还是在先递增后递减的序列上
-                if nums[left] <= target < nums[mid]:
+                if nums[left] <= target < nums[mid]:  # 如果是在递增序列上，left到mid是递增的，那么我们判断目标是否在这个递增区间内，如果在就取这个区间，否则则取右边的区间
                     right = mid - 1
                 else:
                     left = mid + 1
-            else:
+            else: #如果不是在递增序列上，则说明mid到right是递增的，那么我们判断目标是否在这个递增区间内，如果在就取这个区间，否则就取左边的区间
                 if nums[mid] < target <= nums[right]:
                     left = mid + 1
                 else:
