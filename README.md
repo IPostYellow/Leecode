@@ -528,7 +528,7 @@ def longestPalindromeSubseq(self, s: str) -> int:
         return dp[0][0][len(nums)-1] > dp[1][0][len(nums)-1]
 ```
 
-[121,122,123,188买卖股票的最佳时机全家桶](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/188.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAIV.py)<br>、
+[121,122,123,188买卖股票的最佳时机全家桶(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/188.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAIV.py)<br>、
 思路：理解题意，状态无非是：天数、可交易的次数、当前已经买了还是没有买，然后要求最大的收益，不妨设dp[i][k][p]为第i天下交易了k次然后目前持有股票(p=1)或者不持有股票(p=0)的最大收益。每天可以进行的选择为[买入、卖出、不作为]，而且这些操作都被交易次数和是否持有股票所限制的。接下来看状态转移递推式：<br>
 ```
 dp[i][k][1]=max(dp[i-1][k][1],dp[i-1][k-1][0]-当天的股票价格)
@@ -554,7 +554,7 @@ def maxProfit(self, k: int, prices: List[int]) -> int:
     return dp[len(prices)][k][0]
 ```
 
-[198.打家劫舍](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/198.%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.py)<br>
+[198.打家劫舍(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/198.%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.py)<br>
 思路：题目通俗来说就是不能抢相邻的。状态就是房子，选择就是抢或者不抢，目的是使抢的钱最多。那么dp[i]为第i家房子为止，最多能抢到多少。那么很显然dp[i]=max(dp[i-1],dp[i-2]+当前房子的钱),也就是要么这家房子我抢，那值应该就是我i-2个房子的最大收益加上当前房子的钱，要么不抢，那就是还保持了i-1房子的最大收益。状态转移只可能从这两个地方来。然后初始条件：很显然dp[0]=0没有房子自然收益为0，dp[1]=第一家的钱，只有一家，就只能抢他。
 ```
     def rob(self, nums: List[int]) -> int:
@@ -580,6 +580,31 @@ def maxProfit(self, k: int, prices: List[int]) -> int:
             dp1 = dp2
             dp2 = dp
         return dp
+```
+
+[213.打家劫舍II(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/213.%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8DII.py)<br>
+思路：和[198.打家劫舍]思路类似，只是前后围成了一个圈。那么只需要分两种情况讨论就好了，第一种是抢第一个房子，那么最后一个房子就不能抢了，去掉最后一个房子，接下来和[198.打家劫舍]一样了。第二种是不抢第一个房子，那么把第一个房子去掉，接下来又和[198.打家劫舍]一样了。
+```
+    def rob2(self, nums): #44ms,13.5mb
+        if len(nums) == 0:
+            return 0
+        if len(nums) <= 2:
+            return max(nums)
+        dp = 0
+        dp1 = 0
+        dp2 = nums[1]
+        for i in range(2, len(nums)):
+            dp = max(dp2, (dp1 + nums[i]))
+            dp1 = dp2
+            dp2 = dp
+        f = 0
+        f1 = 0
+        f2 = nums[0]
+        for i in range(1, len(nums)-1):
+            f = max(f2, (f1 + nums[i]))
+            f1 = f2
+            f2 = f
+        return max(dp, f)
 ```
 
 ## 回溯法
