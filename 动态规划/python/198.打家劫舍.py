@@ -19,7 +19,7 @@
 from typing import List
 
 
-class Solution:  #48ms,13.4mb
+class Solution:  # 48ms,13.4mb
     def rob(self, nums: List[int]) -> int:
         if len(nums) == 0:
             return 0
@@ -30,3 +30,17 @@ class Solution:  #48ms,13.4mb
             dp[i] = max((dp[i - 2] + nums[i - 1]), dp[i - 1])
             # dp[i]=max(dp[i-2]的基础上抢了第i家，dp[i-1]不抢第i家)
         return dp[len(nums)]
+
+    def rob2(self, nums):  # 40ms,13.5mb
+        if len(nums) == 0:
+            return 0
+        if len(nums) == 1:
+            return nums[0]
+        dp = 0
+        dp1 = 0
+        dp2 = nums[0]
+        for i in range(1, len(nums)):
+            dp = max(dp2, (dp1 + nums[i]))
+            dp1 = dp2
+            dp2 = dp
+        return dp
