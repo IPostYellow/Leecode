@@ -554,6 +554,33 @@ def maxProfit(self, k: int, prices: List[int]) -> int:
     return dp[len(prices)][k][0]
 ```
 
+[198.打家劫舍](https://github.com/IPostYellow/Leecode/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/python/198.%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.py)<br>
+思路：题目通俗来说就是不能抢相邻的。状态就是房子，选择就是抢或者不抢，目的是使抢的钱最多。那么dp[i]为第i家房子为止，最多能抢到多少。那么很显然dp[i]=max(dp[i-1],dp[i-2]+当前房子的钱),也就是要么这家房子我抢，那值应该就是我i-2个房子的最大收益加上当前房子的钱，要么不抢，那就是还保持了i-1房子的最大收益。状态转移只可能从这两个地方来。然后初始条件：很显然dp[0]=0没有房子自然收益为0，dp[1]=第一家的钱，只有一家，就只能抢他。
+```
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
+        dp = [0] * (len(nums) + 1)
+        dp[0] = 0
+        dp[1] = nums[0]
+        for i in range(2, len(nums) + 1):
+            dp[i] = max((dp[i - 2] + nums[i - 1]), dp[i - 1])
+            # dp[i]=max(dp[i-2]的基础上抢了第i家，dp[i-1]不抢第i家)
+        return dp[len(nums)]
+#上述过程有很多无用空间，可以变成如下所示
+        if len(nums) == 0:
+            return 0
+        if len(nums) == 1:
+            return nums[0]
+        dp = 0
+        dp1 = 0
+        dp2 = nums[0]
+        for i in range(1, len(nums)):
+            dp = max(dp2, (dp1 + nums[i]))
+            dp1 = dp2
+            dp2 = dp
+        return dp
+```
 
 ## 回溯法
 解题模板：<br>
