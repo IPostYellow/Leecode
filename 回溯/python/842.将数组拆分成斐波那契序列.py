@@ -53,10 +53,9 @@ class Solution:#64ms,13.6mb
                         return True
                     res.pop()
             return False
-
         trackback(0)
         return res
 
 
 s = Solution()
-print(s.splitIntoFibonacci('0123'))
+print(s.splitIntoFibonacci('123456789'))

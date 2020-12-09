@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7fb7187-eeef-4c85-8010-f1f0f5246c3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/842.将数组拆分成斐波那契序列.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/动态规划/python/121.买卖股票的最佳时机.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动窗口/python/28.实现strStr().py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py" beforeDir="false" afterPath="$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +31,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\leetcode\回溯\python" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -41,7 +48,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.842.将数组拆分成斐波那契序列">
+  <component name="RunManager" selected="Python.121.买卖股票的最佳时机">
+    <configuration name="121.买卖股票的最佳时机" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myleetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/动态规划/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/121.买卖股票的最佳时机.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="486.预测赢家" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myleetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,7 +93,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="516.最长回文子序列" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="842.将数组拆分成斐波那契序列 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myleetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -72,34 +101,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/动态规划/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/回溯/python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/516.最长回文子序列.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="659.分割数组为连续子序列" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="myleetcode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/659.分割数组为连续子序列.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -154,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.121.买卖股票的最佳时机" />
+        <item itemvalue="Python.842.将数组拆分成斐波那契序列 (1)" />
         <item itemvalue="Python.842.将数组拆分成斐波那契序列" />
         <item itemvalue="Python.877.石子游戏" />
         <item itemvalue="Python.486.预测赢家" />
-        <item itemvalue="Python.516.最长回文子序列" />
-        <item itemvalue="Python.659.分割数组为连续子序列" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +182,8 @@
       <workItem from="1605618047368" duration="409000" />
       <workItem from="1606547661286" duration="68000" />
       <workItem from="1606548242376" duration="2707000" />
-      <workItem from="1606897550144" duration="25948000" />
+      <workItem from="1606897550144" duration="30280000" />
+      <workItem from="1607480783580" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="新增852题目的解题思路">
       <created>1605618442081</created>
@@ -195,7 +203,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -234,9 +244,14 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/842.将数组拆分成斐波那契序列.py</url>
-          <line>41</line>
+          <url>file://$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py</url>
+          <line>42</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/动态规划/python/121.买卖股票的最佳时机.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -244,11 +259,13 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/leetcode$516_.coverage" NAME="516.最长回文子序列 Coverage Results" MODIFIED="1607303546733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$842_.coverage" NAME="842.将数组拆分成斐波那契序列 Coverage Results" MODIFIED="1607406932275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/leetcode$842___1_.coverage" NAME="842.将数组拆分成斐波那契序列 (1) Coverage Results" MODIFIED="1607407244196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/回溯/python" />
     <SUITE FILE_PATH="coverage/leetcode$659_.coverage" NAME="659.分割数组为连续子序列 Coverage Results" MODIFIED="1607048136011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/leetcode$877_.coverage" NAME="877.石子游戏 Coverage Results" MODIFIED="1607309714771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$300_.coverage" NAME="300.最长上升子序列 Coverage Results" MODIFIED="1606980417312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$486_.coverage" NAME="486.预测赢家 Coverage Results" MODIFIED="1607308635462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$322_.coverage" NAME="322.零钱兑换 Coverage Results" MODIFIED="1606977916491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
     <SUITE FILE_PATH="coverage/leetcode$72_.coverage" NAME="72.编辑距离 Coverage Results" MODIFIED="1606983400920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
+    <SUITE FILE_PATH="coverage/leetcode$121_.coverage" NAME="121.买卖股票的最佳时机 Coverage Results" MODIFIED="1607410637911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
   </component>
 </project>
