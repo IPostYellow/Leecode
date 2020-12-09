@@ -533,6 +533,25 @@ def longestPalindromeSubseq(self, s: str) -> int:
 ```
 dp[i][k][1]=max(dp[i-1][k][1],dp[i-1][k-1][0]-当天的股票价格)
 (很显然第i天已经交易了k次的持有股票的状态应该由：前一天就是这样然后不作为或者前一天交易次数-1不持股票但是今天买了这两个转移而来)
+dp[i][k][0]=max(dp[i-1][k][0],dp[i-1][k][1]+当天的股票价格)
+(很显然第i天已经交易了k次的持有股票的状态应该由：前一天就是这样然后不作为或者前一天持股票但是今天卖了这两个转移而来)
+```
+
+初始条件：一开始第0天，是不可能持有股票的，所以dp[0][k][1]应该设置为负无穷，这里我们只要用第一天的负价格代替就可以了。而一开始其他情况未持有的收益应该都为0。
+
+```
+def maxProfit(self, k: int, prices: List[int]) -> int:
+    if len(prices)==0:
+        return 0
+    dp=[[[0]*2 for j in range(k+1)] for i in range(len(prices)+1)]
+    for i in range(k+1):
+        dp[0][i][1]=-prices[0]
+    for i in range(1,len(prices)+1):
+        dp[i][0][0]=dp[i-1][0][0]
+        for j in range(1,k+1):
+            dp[i][j][1]=max(dp[i-1][j][1],dp[i-1][j-1][0]-prices[i-1])
+            dp[i][j][0]=max(dp[i-1][j][0],dp[i-1][j][1]+prices[i-1])
+    return dp[len(prices)][k][0]
 ```
 
 
