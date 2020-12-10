@@ -18,7 +18,7 @@ class Solution:  # 9980ms,22.1mb,看运气全是超时
         if len(s) == 0:
             return ""
         res = s[0]
-        dp = [[False for _, _ in enumerate(s)] for _, _ in enumerate(s)]
+        dp = [[False for _, _ in enumerate(s)] for i, _ in enumerate(s)]
         for i, _ in enumerate(s):
             dp[i][i] = True
         for i in range(len(s) - 1, -1, -1):
@@ -31,6 +31,34 @@ class Solution:  # 9980ms,22.1mb,看运气全是超时
                     res = s[i:j + 1]
         return res
 
+#
+# s = Solution()
+# print(s.longestPalindrome('aaaaa'))
 
-s = Solution()
-print(s.longestPalindrome('aaaaa'))
+
+class Solution2:  # 8092ms,17.2mb时间很紧迫
+    def longestPalindrome(self, s: str) -> str:
+        if len(s) == 0:
+            return ""
+        res = s[0]
+        dp = [[False] * (i + 1) for i in range(len(s))]
+        for i, _ in enumerate(s):
+            dp[i][-1] = True
+        for l in range(1,len(s)):
+            for i in range(len(s)-1,l-1,-1):
+                j=i-l
+                if l==1:
+                    if s[i]==s[j]:
+                        dp[i][j]=True
+                        if len(res)<2:
+                            res=s[j:i+1]
+                    else:
+                        dp[i][j]=False
+                else:
+                    dp[i][j]=dp[i-1][j+1] and s[i]==s[j]
+                    if dp[i][j] and len(res)<(i-j+1):
+                        res=s[j:i+1]
+        return res
+
+s=Solution2()
+print(s.longestPalindrome("cbbd"))
