@@ -87,6 +87,28 @@ while right<len(s)：
 return 总答案
 ```
 
+[42.接雨水](https://github.com/IPostYellow/Leecode/blob/master/42.%E6%8E%A5%E9%9B%A8%E6%B0%B4.py)<br>
+思路：每个格子能够接到的雨水量=左边的最高和右边的最高之中的最短的那个-当前的高度。双指针左右两头遍历。双指针边遍历边找最大值。由于两边找到的只是局部的最大值，所以只能从左或者右最小的那边看。
+```
+    def trap(self, height: List[int]) -> int:
+        if len(height) < 3:
+            return 0
+        sum = 0
+        left,right=0,len(height)-1
+        left_max=0
+        right_max=0
+        while(left<right):
+            left_max=max(left_max,height[left]) #更新左边的最值
+            right_max=max(right_max,height[right]) #更新右边的最值
+            if left_max<=right_max: #必须找到短边，因为另一边可能还有没有遍历到的更高的边，但是不影响短板效应
+                sum+=left_max-height[left]
+                left+=1
+            else:
+                sum+=right_max-height[right]
+                right-=1
+        return sum
+```
+
 ## 二分搜索
 解题模板：<br>
 ```
