@@ -33,6 +33,27 @@ while (right<len(待滑动的列表/字符串)):
 ```
 <br>
 
+[3.无重复字符的最长子串](https://github.com/IPostYellow/Leecode/blob/master/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/python/3.%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.py)<br>
+思路：创建滑动窗口，用字典(集合也可以)记录下窗口内的字母，如果当前右指针所指元素在字典里存在，则将字典里的左指针元素去除，然后左指针向右移动，再判断右指针所指元素是否在字典里存在，不停重复。如果右指针所指元素字典里不存在，则将其加入字典中，并让右指针向右移动。
+```
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        tmp = defaultdict(int)
+        p1, p2 = 0, 0
+        max_len = 0
+        while (p1 <= p2 and p2 < len(s)):
+            if tmp[s[p2]] == 1:
+                if max_len < p2 - p1:
+                    max_len = p2 - p1
+                tmp[s[p1]] -= 1
+                p1 += 1
+            else:
+                tmp[s[p2]] = 1
+                p2 += 1
+        if p2 - p1 > max_len:
+            max_len = p2 - p1
+        return max_len
+```
+
 [209.长度最小的子数组(Python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/python/209%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.py)<br>
 思路：创建一个滑动窗口和窗口尺寸，right指针不断向右移，并记录下窗口内的值的总和，如果大于等于给定的值，则判断窗口大小是否比上一次的小，如果小则更新最小窗口大小，并且不断移动left指针缩小窗口，直到窗口内总和小于给定的值为止，每移动一次left指针，再判断一次窗口内总和是否大于等于给定的值而且窗口大小是否比当前最小窗口大小小，如果是则更新最小窗口大小，否则就继续。直到right指针移动过最右边为止。消耗时间44ms,消耗内存15.2MB。对应的模板中的例子就是：<br>
 ```
