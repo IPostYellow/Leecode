@@ -11,6 +11,74 @@
 [合并两个有序链表(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/21%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8.py)<br>
 [链表分割(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/86%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8.py)<br>
 [删除链表的倒数第n个结点(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/19%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9.py)<br>
+
+[2.两数相加](https://github.com/IPostYellow/Leecode/blob/master/%E9%93%BE%E8%A1%A8/python/2.%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0.py)<br>
+思路：利用ad变量考虑进位，如果产生了进位，则ad=1，并且当前位的值变成了(val1+val2+ad)%10。如果没有发生进位，则将ad变0。然后遍历链表就完事了，甚至都不用反转链表。
+```
+def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    if l1 == None:
+        return l2
+    if l2 == None:
+        return l1
+    def jinwei(v1, v2, ad):
+        if v1 + v2 + ad >= 10:
+            return True
+        else:
+            return False
+    p1 = l1
+    p2 = l2
+    if p1.val + p2.val < 10:
+        p3 = ListNode(p1.val + p2.val)
+        ad = 0
+    else:
+        p3 = ListNode((p1.val + p2.val) % 10)
+        ad = 1
+    p1 = p1.next
+    p2 = p2.next
+    first = p3
+    while (p1 != None and p2 != None):
+        if jinwei(p1.val, p2.val, ad):
+            tmp = ListNode((p1.val + p2.val + ad) % 10)
+            ad = 1
+        else:
+            tmp = ListNode(p1.val + p2.val + ad)
+            ad = 0
+        p3.next = tmp
+        p3 = p3.next
+        p1 = p1.next
+        p2 = p2.next
+    while p1:
+        if ad:
+            if jinwei(p1.val, 0, ad):
+                tmp = ListNode((p1.val + ad) % 10)
+                ad = 1
+            else:
+                tmp = ListNode(p1.val + ad)
+                ad = 0
+        else:
+            tmp = ListNode(p1.val)
+        p3.next = tmp
+        p3 = p3.next
+        p1 = p1.next
+    while p2:
+        if ad:
+            if jinwei(p2.val, 0, ad):
+                tmp = ListNode((p2.val + ad) % 10)
+                ad = 1
+            else:
+                tmp = ListNode(p2.val + ad)
+                ad = 0
+        else:
+            tmp = ListNode(p2.val)
+        p3.next = tmp
+        p3 = p3.next
+        p2 = p2.next
+    if ad == 1:
+        tmp = ListNode(1)
+        p3.next = tmp
+    return first
+```
+
 ## 树
 [二叉树的后序遍历(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/145%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86.py)<br>
 
@@ -882,3 +950,4 @@ def is_valid(i, j, grid): #判断是否要剪枝
                     res.pop() # 撤销选择
             return False
 ```
+
