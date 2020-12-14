@@ -21,3 +21,14 @@ class Solution:  # 28ms
                 return [hashtable[target - num], i]
             hashtable[nums[i]] = i  # 以键存数，值存下标
         return []
+
+#第二次写
+class Solution2:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        from collections import defaultdict
+        tmp=defaultdict(int)
+        for i in range(len(nums)):
+            if target-nums[i] in tmp.keys():
+                return [tmp[target-nums[i]],i]
+            else:
+                tmp[nums[i]]=i

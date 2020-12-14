@@ -88,3 +88,49 @@ class Solution:#60ms,13.6mb
             p3.next = tmp
 
         return first
+
+# 第二次写
+class ListNode1:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution1:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        ad=0
+        first=ListNode(-1)
+        res=first
+        while(l1!=None and l2!=None):
+            if l1.val+l2.val+ad>=10:
+                first.next=ListNode((l1.val+l2.val+ad)%10)
+                ad=1
+                first=first.next
+            else:
+                first.next=ListNode(l1.val+l2.val+ad)
+                ad=0
+                first=first.next
+            l1=l1.next
+            l2=l2.next
+
+        while(l1!=None):
+            if l1.val+ad>=10:
+                first.next=ListNode((l1.val+ad)%10)
+                ad=1
+                first=first.next
+            else:
+                first.next=ListNode(l1.val+ad)
+                ad=0
+                first=first.next
+            l1=l1.next
+        while(l2!=None):
+            if l2.val+ad>=10:
+                first.next=ListNode((l2.val+ad)%10)
+                ad=1
+                first=first.next
+            else:
+                first.next=ListNode(l2.val+ad)
+                ad=0
+                first=first.next
+            l2=l2.next
+        if ad==1:
+            first.next=ListNode(1)
+        return res.next

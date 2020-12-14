@@ -44,3 +44,22 @@ class Solution:#80ms,13.6mb
 
 s=Solution()
 print(s.lengthOfLongestSubstring(''))
+
+#第二次写
+class Solution2:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        left,right=0,0
+        a=set()
+        max_len=0
+        while(right<len(s)):
+            if s[right] in a:
+                if max_len<right-left:
+                    max_len=right-left
+                a.remove(s[left])
+                left+=1
+            else:
+                a.add(s[right])
+                right+=1
+        if right-left>max_len:
+            max_len=right-left
+        return max_len
