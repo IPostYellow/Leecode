@@ -59,3 +59,39 @@ class Solution2:
 
 s=Solution2()
 dayinlianbiao(s.reverseList(l1))
+
+#第二次
+class ListNode3:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution3:#递归
+    def reverseList(self, head: ListNode) -> ListNode:
+        if head==None or head.next==None:
+            return head
+        else:
+            res=self.reverseList(head.next)
+            head.next.next=head
+            head.next=None
+
+            return res
+
+
+class ListNode4:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+class Solution4:
+    def reverseList(self, head: ListNode) -> ListNode:
+        first = ListNode(-1)
+        p1 = head
+        while (p1 != None):
+            tmp = p1
+            p1 = p1.next
+            tmp.next = first.next
+            first.next = tmp
+
+        return first.next

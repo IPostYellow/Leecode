@@ -93,3 +93,50 @@ class Solution2:
         left = (m + n + 1) // 2
         right = (m + n + 2) // 2
         return (self.findknumber(nums1, 0, nums2, 0, left) + self.findknumber(nums1, 0, nums2, 0, right)) / 2
+
+
+#第二次
+class Solution3:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        m = len(nums1)
+        n = len(nums2)
+        left, right = -1, -1
+        s1, s2 = 0, 0
+        mid = (m + n) // 2
+        while (s1 + s2 <= mid):
+            left = right
+            if s1 < m and (s2 >= n or nums1[s1] < nums2[s2]):
+                right = nums1[s1]
+                s1 += 1
+            elif s2 < n and (s1 >= m or nums2[s2] <= nums1[s1]):
+                right = nums2[s2]
+                s2 += 1
+
+        if (m + n) % 2 == 0:
+            return (left + right) / 2
+        else:
+            return float(right)
+
+
+class Solution4:
+    def findknumber(self, nums1, start1, nums2, start2, k):
+        if start1 >= len(nums1):
+            return nums2[start2 + k - 1]
+        if start2 >= len(nums2):
+            return nums1[start1 + k - 1]
+        if k == 1:
+            return min(nums1[start1], nums2[start2])
+
+        mid1 = nums1[start1 + k // 2 - 1] if (start1 + k // 2 - 1 < len(nums1)) else float("INF")
+        mid2 = nums2[start2 + k // 2 - 1] if (start2 + k // 2 - 1 < len(nums2)) else float("INF")
+        if mid1 < mid2:
+            return self.findknumber(nums1, start1 + k // 2, nums2, start2, k - k // 2)
+        else:
+            return self.findknumber(nums1, start1, nums2, start2 + k // 2, k - k // 2)
+
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        m = len(nums1)
+        n = len(nums2)
+        left = (m + n + 1) // 2
+        right = (m + n + 2) // 2
+        return (self.findknumber(nums1, 0, nums2, 0, left) + self.findknumber(nums1, 0, nums2, 0, right)) / 2
