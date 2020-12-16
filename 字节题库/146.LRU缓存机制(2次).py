@@ -89,3 +89,54 @@ print(s.put(4, 4))
 print(s.get(1))
 print(s.get(3))
 print(s.get(4))
+
+#第二次
+class BilistNode2:
+    def __init__(self,key,val) -> None:
+        self.key=key
+        self.val=val
+        self.next=None
+        self.prev=None
+
+class LRUCache2:
+    def __init__(self, capacity: int):
+        self.capacity=capacity
+        self.hashmap={}
+        self.head=BilistNode2(None,None)
+        self.tail=BilistNode2(None,None)
+
+        self.head.next=self.tail
+        self.tail.prev=self.head
+
+    def move_to_tail(self,key):
+        tmp=self.hashmap[key]
+        tmp.next.prev=tmp.prev
+        tmp.prev.next=tmp.next
+
+        self.tail.prev.next=tmp
+        tmp.prev=self.tail.prev
+        self.tail.prev=tmp
+        tmp.next=self.tail
+
+    def get(self, key: int) -> int:
+        if key in self.hashmap:
+            self.move_to_tail(key)
+            return self.hashmap[key].val
+        else:
+            return -1
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.hashmap:
+            self.hashmap[key].val=value
+            self.move_to_tail(key)
+        else:
+            if self.capacity==len(self.hashmap):
+                self.hashmap.pop(self.head.next.key)
+                self.head.next.next.prev=self.head
+                self.head.next=self.head.next.next
+            new_node=BilistNode2(key,value)
+            self.hashmap[key]=new_node
+            new_node.prev=self.tail.prev
+            self.tail.prev.next=new_node
+            self.tail.prev=new_node
+            new_node.next=self.tail

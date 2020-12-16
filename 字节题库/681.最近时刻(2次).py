@@ -36,3 +36,22 @@ class Solution:
                     i % 60 % 10))
 s = Solution()
 print(s.nextClosestTime("19:23"))
+
+#第二次
+class Solution2:
+    def nextClosestTime(self, time: str) -> str:
+
+        total_number = []
+        for i in range(len(time)):
+            if i != 2:
+                total_number.append(int(time[i]))
+        t = time.split(':')
+        m = int(t[0]) * 60 + int(t[1])
+        for i in range(m + 1, 24 * 60 + 1):
+            if (i // 600) in total_number and (i // 60 % 10) in total_number and (i % 60 // 10) in total_number and (
+                    i % 60 % 10) in total_number:
+                return str(i // 600) + str(i // 60 % 10) + ":" + str(i % 60 // 10) + str(i % 60 % 10)
+        for i in range(0, m + 1):
+            if (i // 600) in total_number and (i // 60 % 10) in total_number and (i % 60 // 10) in total_number and (
+                    i % 60 % 10) in total_number:
+                return str(i // 600) + str(i // 60 % 10) + ":" + str(i % 60 // 10) + str(i % 60 % 10)

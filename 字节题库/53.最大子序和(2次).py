@@ -27,3 +27,23 @@ class Solution:
                 res=dp
             dp0=dp
         return res
+
+#第二次
+class Solution2:
+    def maxSubArray(self, nums: List[int]) -> int:
+        dp=[0]*len(nums)
+        dp[0]=nums[0]
+        for i in range(1,len(nums)):
+            dp[i]=max(dp[i-1]+nums[i],nums[i])
+        return max(dp)
+
+    def maxSubArray2(self, nums: List[int]) -> int:
+        dp0 = -float("INF")
+        dp = 0
+        res = -float("INF")
+        for i in range(0, len(nums)):
+            dp = max(dp0 + nums[i], nums[i])
+            dp0 = dp
+            if dp > res:
+                res = dp
+        return res
