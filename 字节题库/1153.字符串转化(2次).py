@@ -54,3 +54,23 @@ class Solution2:
                     if str2[i] != str2[j]:
                         return False
         return True
+
+
+#第二次
+class Solution3:
+    def canConvert(self, str1: str, str2: str) -> bool:
+        if str1==str2:
+            return True
+        char_dict={}
+        exsit=set()
+        for i in str2:
+            exsit.add(i)
+        if len(exsit)>=26:
+            return False
+        for i in range(len(str1)):
+            if str1[i] in char_dict:
+                if str2[i]!=char_dict[str1[i]]:
+                    return False
+            else:
+                char_dict[str1[i]]=str2[i]
+        return True

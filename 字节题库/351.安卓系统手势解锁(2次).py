@@ -72,3 +72,87 @@ class Solution:
 
 s=Solution()
 print(s.numberOfPatterns(1,2))
+
+#第二次
+class Solution2:
+    def numberOfPatterns(self, m: int, n: int) -> int:
+        skip = {
+            '1->3': 2,
+            '3->1': 2,
+            '1->7': 4,
+            '7->1': 4,
+            '1->9': 5,
+            '9->1': 5,
+            '2->8': 5,
+            '8->2': 5,
+            '3->7': 5,
+            '7->3': 5,
+            '3->9': 6,
+            '9->3': 6,
+            '4->6': 5,
+            '6->4': 5,
+            '7->9': 8,
+            '9->7': 8
+        }
+
+        def count_number(cur, used, skip, rest_step):  # 从cur出发能够有多少种滑动方法
+            if rest_step == 0:
+                return 1
+            res = 0
+            used[cur] = True
+            for i in range(1, 10):
+                if used[i] == False:
+                    if (str(cur) + "->" + str(i) not in skip) or (
+                            (str(cur) + "->" + str(i) in skip) and used[skip[str(cur) + '->' + str(i)]] == True):
+                        res += count_number(i, used, skip, rest_step - 1)
+            used[cur] = False
+            return res
+
+        used = [False] * 10
+        ans = 0
+        for i in range(m, n + 1):
+            for j in range(1, 10):
+                ans += count_number(j, used, skip, i - 1)
+        return ans
+
+class Solution3:
+    def numberOfPatterns(self, m: int, n: int) -> int:
+        skip = {
+            '1->3': 2,
+            '3->1': 2,
+            '1->7': 4,
+            '7->1': 4,
+            '1->9': 5,
+            '9->1': 5,
+            '2->8': 5,
+            '8->2': 5,
+            '3->7': 5,
+            '7->3': 5,
+            '3->9': 6,
+            '9->3': 6,
+            '4->6': 5,
+            '6->4': 5,
+            '7->9': 8,
+            '9->7': 8
+        }
+
+        def count_number(cur, used, skip, rest_step):  # 从cur出发能够有多少种滑动方法
+            if rest_step == 0:
+                return 1
+            res = 0
+            used[cur] = True
+            for i in range(1, 10):
+                if used[i] == False:
+                    if (str(cur) + "->" + str(i) not in skip) or (
+                            (str(cur) + "->" + str(i) in skip) and used[skip[str(cur) + '->' + str(i)]] == True):
+                        res += count_number(i, used, skip, rest_step - 1)
+            used[cur] = False
+            return res
+
+        used = [False] * 10
+        ans = 0
+        for i in range(m, n + 1):
+            ans += count_number(1, used, skip, i - 1) * 4
+            ans += count_number(2, used, skip, i - 1) * 4
+            ans += count_number(5, used, skip, i - 1)
+        return ans

@@ -56,3 +56,31 @@ class Solution:
         #         prefix+=1 # 1变成2
         #         p+=count # 指针直接指过前一个前缀的所有结点
         # return prefix
+
+
+#第二次
+class Solution2:
+    def findKthNumber(self, n: int, k: int) -> int:
+
+        def get_all_node(prev, n):
+            cur = prev
+            next = prev + 1
+            node_nums = 0
+            while (cur <= n):
+                node_nums += min(n + 1, next) - cur
+                cur *= 10
+                next *= 10
+            return node_nums
+
+        p = 1
+        prev = 1
+        while (p < k):
+            count = get_all_node(prev, n)
+            if p + count > k:
+                p += 1
+                prev *= 10
+            else:
+                p += count
+                prev += 1
+
+        return prev
