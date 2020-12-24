@@ -250,9 +250,9 @@ class Solution4:
             for i in range(m, n + 1):
                 self.res += trackback(used, 5, i - 1, skip)
 
-        t1 = threading.Thread(target=count_1_3_7_9())
-        t2 = threading.Thread(target=count_2_4_6_8())
-        t3 = threading.Thread(target=count_5())
+        t1 = threading.Thread(target=count_1_3_7_9)
+        t2 = threading.Thread(target=count_2_4_6_8)
+        t3 = threading.Thread(target=count_5)
         t1.start()
         t2.start()
         t3.start()

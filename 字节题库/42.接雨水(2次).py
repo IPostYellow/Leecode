@@ -65,3 +65,39 @@ class Solution3:#44ms,13.9mb
                 sum+=right_max-height[right]
                 right-=1
         return sum
+
+#第二次
+class Solution_2:
+    def trap(self, height: List[int]) -> int:
+
+        # def find_max_height(start,height):
+        #     leftm=-1
+        #     rightm=-1
+        #     for i in range(start):
+        #         if height[i]>leftm:
+        #             leftm=height[i]
+        #     for i in range(start+1,len(height)):
+        #         if height[i]>rightm:
+        #             rightm=height[i]
+        #     return leftm,rightm
+        # water=0
+        # for i in range(1,len(height)-1):
+        #     l,r=find_max_height(i,height)
+        #     if height[i]<min(l,r):
+        #         water+=min(l,r)-height[i]
+        # return water
+        if len(height) == 0:
+            return 0
+        left, right = 0, len(height) - 1
+        lmax, rmax = height[left], height[right]
+        water = 0
+        while (left < right):
+            lmax = max(lmax, height[left])
+            rmax = max(rmax, height[right])
+            if lmax < rmax:
+                water += lmax - height[left]
+                left += 1
+            else:
+                water += rmax - height[right]
+                right -= 1
+        return water

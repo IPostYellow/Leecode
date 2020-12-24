@@ -62,3 +62,39 @@ p3.next=p4
 p4.next=p5
 s=Solution()
 print(s.reverseKGroup(p1,2))
+#第二次
+# Definition for singly-linked list.
+class ListNode2:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution2:
+    def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
+        def reverse_p1_to_p2(p1, p2, prev):
+            end = p2.next
+            t = ListNode(-1)
+            t.next = end
+            while (p1 != end):
+                tmp = p1
+                p1 = p1.next
+                tmp.next = t.next
+                t.next = tmp
+            prev.next = t.next
+
+        first = ListNode(-1)
+        first.next = head
+        res = first
+        end = first
+        while (end.next != None):
+            count = k
+            while (count > 0):
+                end = end.next
+                count -= 1
+                if end == None:
+                    return res.next
+
+            reverse_p1_to_p2(head, end, first)
+            first = head
+            end = head
+            head = head.next
+        return res.next
