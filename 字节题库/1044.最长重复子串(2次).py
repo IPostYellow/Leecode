@@ -9,7 +9,7 @@ class Solution:
             # 先乘a，使得h里的每个数的次方都+1，然后再减去最高的次方，再加后面一个值
             h = (h * a - nums[start - 1] * aL + nums[start + L - 1]) % modulus  # 将h的编码的前面一个字符去掉，加后面一个字符
             if h in seen:
-                return start #返回L长度重复子串的重复的开始点
+                return start  # 返回L长度重复子串的重复的开始点
             seen.add(h)
         return -1
 
@@ -17,8 +17,8 @@ class Solution:
         n = len(S)
         nums = [ord(S[i]) - ord('a') for i in range(n)]  # 字符里的每个字母的26进制编码
         a = 26
-        modulus = 1e9+7
-        modulus=int(modulus)
+        modulus = 1e9 + 7
+        modulus = int(modulus)
         left, right = 1, n
         while left != right:
             L = left + (right - left) // 2
@@ -63,3 +63,42 @@ class Solution2:
 
         result = self.search(left - 1, 26, nums)
         return s[result:result + left - 1] if result != -1 else ""
+
+
+# 第二次
+class Solution_2:
+    def longestDupSubstring(self, s: str) -> str:
+
+        def compute_is_exist(l, a, nums):
+            tmp = set()
+            num = 0
+            for i in range(l):
+                num = (num * a + nums[i])
+            tmp.add(num)
+            # 超时
+            # for i in range(1, len(nums) - l + 1):
+            #     num = 0
+            #     for j in range(l):
+            #         num = (num * a + nums[i + j])
+            al = a ** l
+            for i in range(1, len(nums) - l + 1):
+                num = (num * a - nums[i - 1] * al + nums[i + l - 1])
+                if num in tmp:
+                    return i
+                else:
+                    tmp.add(num)
+            return -1
+
+        nums = [ord(i) - ord('a') for i in s]
+        left, right = 1, len(nums)
+        while (left < right):
+            mid = left + (right - left) // 2
+            if compute_is_exist(mid, 26, nums) != -1:
+                left = mid + 1
+            else:
+                right = mid
+        l = compute_is_exist(left - 1, 26, nums)
+        if l == -1:
+            return ""
+        else:
+            return s[l:l + left - 1]
