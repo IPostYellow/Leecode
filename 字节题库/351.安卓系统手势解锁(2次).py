@@ -27,82 +27,7 @@
 '''
 import threading
 import queue
-
-
-class Solution:
-    def numberOfPatterns(self, m: int, n: int) -> int:
-        skip = {
-            "1>3": 2,
-            "3>1": 2,
-            "1>7": 4,
-            "7>1": 4,
-            "1>9": 5,
-            "9>1": 5,
-            "2>8": 5,
-            "8>2": 5,
-            "3>7": 5,
-            "7>3": 5,
-            "3>9": 6,
-            "9>3": 6,
-            "4>6": 5,
-            "6>4": 5,
-            "7>9": 8,
-            "9>7": 8
-        }
-
-        def trackback(used, cur, remain_step, skip):
-            if remain_step == 0:
-                return 1
-            res = 0
-            used[cur] = True
-            for i in range(1, 10):
-                if used[i] == False:  # 判断当前节点是否走过
-                    if str(cur) + ">" + str(i) in skip:  # 判断是否跨数了
-                        if used[skip[str(cur) + ">" + str(i)]] == True:  # 跨数后是否合法
-                            res += trackback(used, i, remain_step - 1, skip)
-                    else:
-                        res += trackback(used, i, remain_step - 1, skip)
-
-            used[cur] = False
-            return res
-
-        # used = [False] * 10
-        result = 0
-
-        def count_1_3_7_9():
-            global result
-            used = [False] * 10
-            for i in range(m, n + 1):
-                result += trackback(used, 1, i - 1, skip) * 4
-
-        def count_2_4_6_8():
-            global result
-            used = [False] * 10
-            for i in range(m, n + 1):
-                result += trackback(used, 2, i - 1, skip) * 4
-
-        def count_5():
-            global result
-            used = [False] * 10
-            for i in range(m, n + 1):
-                result += trackback(used, 5, i - 1, skip)
-
-        # for i in range(m, n + 1):
-        #     # t=threading.Thread()
-        #     result += trackback(used, 1, i - 1, skip) * 4 # 1 3 7 9的结果个数是一样的
-        #     result += trackback(used, 2, i - 1, skip) * 4 # 2 4 6 8的结果个数是一样的
-        #     result += trackback(used, 5, i - 1, skip)
-        t1 = threading.Thread(target=count_1_3_7_9())
-        t2 = threading.Thread(target=count_2_4_6_8())
-        t3 = threading.Thread(target=count_5())
-        t1.start()
-        t2.start()
-        t3.start()
-        return result
-
-
-s = Solution()
-print(s.numberOfPatterns(1, 2))
+from multiprocessing import Process, Queue
 
 
 # 第二次
@@ -192,9 +117,6 @@ class Solution3:
 
 
 # 多线程版本
-import threading
-
-
 class Solution4:
     def __init__(self) -> None:
         self.res = 0
@@ -262,8 +184,7 @@ class Solution4:
 
         return self.res
 
-import queue
-import threading
+
 class Solution5:
     def numberOfPatterns(self, m: int, n: int) -> int:
         skip = {
@@ -301,24 +222,91 @@ class Solution5:
             used[cur] = False
             return res
 
-        def count_count(start, cnt,q):
+        def count_count(start, cnt, q):
             used = [False] * 10
-            result=0
+            result = 0
             for i in range(m, n + 1):
                 result += trackback(used, start, i - 1, skip) * cnt
             q.put(result)
 
         q = queue.Queue()
-        data=[1,2,5]
-        cnt=[4,4,1]
-        threads=[]
+        data = [1, 2, 5]
+        cnt = [4, 4, 1]
+        threads = []
         for i in range(3):
-            t = threading.Thread(target=count_count,args=(data[i],cnt[i],q))
+            t = threading.Thread(target=count_count, args=(data[i], cnt[i], q))
             t.start()
             threads.append(t)
         for thread in threads:
             thread.join()
-        result=0
+        result = 0
         for _ in range(3):
-            result+=q.get()
+            result += q.get()
         return result
+
+
+# 多进程版本
+class Solution6:
+    def trackback(self, used, cur, remain_step, skip):
+        if remain_step == 0:
+            return 1
+        res = 0
+        used[cur] = True
+        for i in range(1, 10):
+            if used[i] == False:  # 判断当前节点是否走过
+                if str(cur) + ">" + str(i) in skip:  # 判断是否跨数了
+                    if used[skip[str(cur) + ">" + str(i)]] == True:  # 跨数后是否合法
+                        res += self.trackback(used, i, remain_step - 1, skip)
+                else:
+                    res += self.trackback(used, i, remain_step - 1, skip)
+        used[cur] = False
+        return res
+
+    def compute_count(self, q, start, m, n, used, skip):
+        sums = 0
+        for i in range(m, n + 1):
+            sums += self.trackback(used, start, i - 1, skip)
+        if start == 5:
+            q.put(sums)
+        else:
+            q.put(sums * 4)
+
+    def numberOfPatterns(self, m: int, n: int) -> int:
+        skip = {
+            "1>3": 2,
+            "3>1": 2,
+            "1>7": 4,
+            "7>1": 4,
+            "1>9": 5,
+            "9>1": 5,
+            "2>8": 5,
+            "8>2": 5,
+            "3>7": 5,
+            "7>3": 5,
+            "3>9": 6,
+            "9>3": 6,
+            "4>6": 5,
+            "6>4": 5,
+            "7>9": 8,
+            "9>7": 8
+        }
+        used = [False] * 10
+        q = Queue()
+        p1 = Process(target=self.compute_count, args=(q, 1, m, n, used, skip))
+        p2 = Process(target=self.compute_count, args=(q, 2, m, n, used, skip))
+        p3 = Process(target=self.compute_count, args=(q, 5, m, n, used, skip))
+        p1.start()
+        p2.start()
+        p3.start()
+        p1.join()
+        p2.join()
+        p3.join()
+        ans = 0
+        for i in range(q.qsize()):
+            ans += q.get()
+        return ans
+
+
+if __name__ == '__main__':  # 多进程要求返回结果可以pickle起来，但是python的闭包不支持pickle
+    s = Solution6()
+    print(s.numberOfPatterns(1, 1))
