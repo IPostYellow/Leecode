@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7fb7187-eeef-4c85-8010-f1f0f5246c3c" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/动态规划/python/121.买卖股票的最佳时机.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/滑动窗口/python/28.实现strStr().py" afterDir="false" />
+    <list default="true" id="bd7cb850-fbf4-4d40-9e67-c3a2e7aaf9ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/树/python/113.路径总和II.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py" beforeDir="false" afterPath="$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py" afterDir="false" />
-=======
-<<<<<<< HEAD
-=======
-      <change afterPath="$PROJECT_DIR$/842.将数组拆分成斐波那契序列.py" afterDir="false" />
->>>>>>> f0e503211ca9ba8a6e9c22e8beaa3401f43cb6bb
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/回溯/python/47全排列II.py" beforeDir="false" afterPath="$PROJECT_DIR$/回溯/python/47全排列II.py" afterDir="false" />
->>>>>>> 467ab059424b7dc26b9294e14129f6377178a1b6
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,40 +11,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< HEAD
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/回溯/python/40组合总和II.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="27" selection-start-line="27" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/回溯/python/46全排列.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1341">
-              <caret line="109" column="17" selection-start-line="108" selection-end-line="121" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/回溯/python/47全排列II.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-=======
->>>>>>> f0e503211ca9ba8a6e9c22e8beaa3401f43cb6bb
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -66,67 +21,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< HEAD
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/回溯/python/组合总和II.py" />
-        <option value="$PROJECT_DIR$/回溯/python/40组合总和II.py" />
-        <option value="$PROJECT_DIR$/回溯/python/47全排列II.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="815" />
-    <option name="y" value="55" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="myleetcode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myleetcode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myleetcode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myleetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="回溯" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myleetcode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myleetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="回溯" type="462c0819:PsiDirectoryNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
-=======
-  <component name="ProjectId" id="1l5qxo5Ra4EXFCRRKDiKpScGgA2" />
->>>>>>> f0e503211ca9ba8a6e9c22e8beaa3401f43cb6bb
+  <component name="ProjectId" id="1mRmQHGXUo8mwc5IF98OofcKypJ" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\leetcode\回溯\python" />
-    </key>
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -140,8 +37,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.121.买卖股票的最佳时机">
-    <configuration name="121.买卖股票的最佳时机" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager">
+    <configuration name="113.路径总和II" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myleetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -149,100 +46,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/动态规划/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/树/python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/121.买卖股票的最佳时机.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="486.预测赢家" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="myleetcode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/动态规划/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/486.预测赢家.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="842.将数组拆分成斐波那契序列 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="myleetcode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/回溯/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="842.将数组拆分成斐波那契序列" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="myleetcode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="E:\leetcode\回溯\python\842.将数组拆分成斐波那契序列.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="877.石子游戏" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="myleetcode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/动态规划/python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/动态规划/python/877.石子游戏.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/树/python/113.路径总和II.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -253,11 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.121.买卖股票的最佳时机" />
-        <item itemvalue="Python.842.将数组拆分成斐波那契序列 (1)" />
-        <item itemvalue="Python.842.将数组拆分成斐波那契序列" />
-        <item itemvalue="Python.877.石子游戏" />
-        <item itemvalue="Python.486.预测赢家" />
+        <item itemvalue="Python.113.路径总和II" />
       </list>
     </recent_temporary>
   </component>
@@ -266,68 +71,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f7fb7187-eeef-4c85-8010-f1f0f5246c3c" name="Default Changelist" comment="" />
-      <created>1605618027321</created>
+      <changelist id="bd7cb850-fbf4-4d40-9e67-c3a2e7aaf9ef" name="Default Changelist" comment="" />
+      <created>1609464636390</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605618027321</updated>
-      <workItem from="1605618047368" duration="409000" />
-      <workItem from="1606547661286" duration="68000" />
-<<<<<<< HEAD
-      <workItem from="1606548242376" duration="4056000" />
-=======
-      <workItem from="1606548242376" duration="2707000" />
-<<<<<<< HEAD
-      <workItem from="1606897550144" duration="30280000" />
-      <workItem from="1607480783580" duration="32000" />
-=======
-      <workItem from="1606897550144" duration="25948000" />
->>>>>>> f0e503211ca9ba8a6e9c22e8beaa3401f43cb6bb
->>>>>>> 467ab059424b7dc26b9294e14129f6377178a1b6
+      <updated>1609464636390</updated>
+      <workItem from="1609464637465" duration="121000" />
+      <workItem from="1609464760924" duration="1497000" />
     </task>
-    <task id="LOCAL-00001" summary="新增852题目的解题思路">
-      <created>1605618442081</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1605618442081</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-<<<<<<< HEAD
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4533000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="652" y="44" width="784" height="832" extended-state="0" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28236914" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-    </layout>
-  </component>
-=======
->>>>>>> f0e503211ca9ba8a6e9c22e8beaa3401f43cb6bb
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -344,106 +97,18 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="新增852题目的解题思路" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增852题目的解题思路" />
-  </component>
-<<<<<<< HEAD
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/二分搜索/python/852山脉数组的峰顶索引.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="28" column="9" selection-start-line="27" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="234">
-            <caret line="112" column="7" selection-start-line="112" selection-start-column="7" selection-end-line="112" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/回溯/python/40组合总和II.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="27" selection-start-line="27" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/回溯/python/46全排列.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1341">
-          <caret line="109" column="17" selection-start-line="108" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/回溯/python/47全排列II.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-=======
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/动态规划/python/300.最长上升子序列.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/动态规划/python/72.编辑距离.py</url>
-          <line>34</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/659.分割数组为连续子序列.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/动态规划/python/516.最长回文子序列.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/动态规划/python/877.石子游戏.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/回溯/python/842.将数组拆分成斐波那契序列.py</url>
-          <line>42</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/动态规划/python/121.买卖股票的最佳时机.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/树/python/113.路径总和II.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/leetcode$516_.coverage" NAME="516.最长回文子序列 Coverage Results" MODIFIED="1607303546733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
-    <SUITE FILE_PATH="coverage/leetcode$842_.coverage" NAME="842.将数组拆分成斐波那契序列 Coverage Results" MODIFIED="1607406932275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/leetcode$842___1_.coverage" NAME="842.将数组拆分成斐波那契序列 (1) Coverage Results" MODIFIED="1607407244196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/回溯/python" />
-    <SUITE FILE_PATH="coverage/leetcode$659_.coverage" NAME="659.分割数组为连续子序列 Coverage Results" MODIFIED="1607048136011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/leetcode$877_.coverage" NAME="877.石子游戏 Coverage Results" MODIFIED="1607309714771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
-    <SUITE FILE_PATH="coverage/leetcode$300_.coverage" NAME="300.最长上升子序列 Coverage Results" MODIFIED="1606980417312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
-    <SUITE FILE_PATH="coverage/leetcode$486_.coverage" NAME="486.预测赢家 Coverage Results" MODIFIED="1607308635462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
-    <SUITE FILE_PATH="coverage/leetcode$322_.coverage" NAME="322.零钱兑换 Coverage Results" MODIFIED="1606977916491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
-    <SUITE FILE_PATH="coverage/leetcode$72_.coverage" NAME="72.编辑距离 Coverage Results" MODIFIED="1606983400920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
-<<<<<<< HEAD
-    <SUITE FILE_PATH="coverage/leetcode$121_.coverage" NAME="121.买卖股票的最佳时机 Coverage Results" MODIFIED="1607410637911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/动态规划/python" />
-=======
->>>>>>> f0e503211ca9ba8a6e9c22e8beaa3401f43cb6bb
->>>>>>> 467ab059424b7dc26b9294e14129f6377178a1b6
+    <SUITE FILE_PATH="coverage/leetcode$113_II.coverage" NAME="113.路径总和II Coverage Results" MODIFIED="1609465649419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/树/python" />
   </component>
 </project>
