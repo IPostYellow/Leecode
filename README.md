@@ -133,6 +133,21 @@ def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         return True
 ```
 
+[113.路径总和II(python)](https://github.com/IPostYellow/Leecode/blob/master/%E6%A0%91/python/113.%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8CII(2%E6%AC%A1).py)<br>
+思路：利用回溯法遍历解空间。选择列表是左子树和右子树，路径是树的路径的值列表，每个递归的结束条件是遍历到了叶子节点。
+```
+    def trackback(self,root, target, res):
+        if not root:
+            return
+        target = target - root.val
+        if target == 0 and not root.left and not root.right:
+            self.ans.append(res+[root.val])
+            return
+        self.trackback(root.left, target, res + [root.val])
+        self.trackback(root.right, target, res + [root.val])
+        return
+```
+
 ## 排序
 [链表归并排序(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/148%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.py)<br>
 ### 记录Leetcode刷的题目
