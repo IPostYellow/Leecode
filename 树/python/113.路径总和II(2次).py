@@ -58,3 +58,34 @@ class Solution:
 t = CreateTree([5,4,8,11,None,13,4,7,2,None,None,5,1])
 s=Solution()
 print(s.pathSum(t,22))
+
+#第二次
+# Definition for a binary tree node.
+class TreeNode_2:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution_2:
+    def __init__(self) -> None:
+        self.ans = []
+
+    def trackback(self, root, path, target):
+        if not root:
+            return
+        target = target - root.val
+        if target == 0 and root.left == None and root.right == None:
+            self.ans.append(path + [root.val])
+            return
+
+        self.trackback(root.left, path + [root.val], target)
+        self.trackback(root.right, path + [root.val], target)
+
+    def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
+        # 回溯法判断
+        if not root:
+            return self.ans
+        self.trackback(root, [], sum)
+
+        return self.ans

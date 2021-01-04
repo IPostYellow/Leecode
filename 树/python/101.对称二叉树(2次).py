@@ -74,3 +74,56 @@ class Solution2:#32ms,13.7MB
 #
 # s=Solution2()
 # print(s.isSymmetric(t))
+
+
+#第二次
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution_2:
+    def isrevese(self,p,q):
+        if (not p and q) or (p and not q):
+            return False
+        if not p and not q:
+            return True
+        if p.val==q.val:
+            l=self.isrevese(p.left,q.right)
+            l2=self.isrevese(p.right,q.left)
+            return l and l2
+        else:
+            return False
+
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root:
+            return True
+        return self.isrevese(root.left,root.right)
+
+
+class Solution2_2:
+    def isrevese(self, p, q):
+        que = [p, q]
+        while que:
+            t1 = que.pop()
+            t2 = que.pop()
+            if (not t1 and t2) or (t1 and not t2):
+                return False
+            if not t1 and not t2:
+                continue
+            if t1.val != t2.val:
+                return False
+            que.append(t1.left)
+            que.append(t2.right)
+
+            que.append(t1.right)
+            que.append(t2.left)
+
+        return True
+
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root:
+            return True
+        return self.isrevese(root.left, root.right)
