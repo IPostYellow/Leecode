@@ -82,6 +82,57 @@ def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 ## 树
 [二叉树的后序遍历(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/145%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86.py)<br>
 
+[100.相同的树(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E6%A0%91/python/100.%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.py)<br>
+思路：递归判断两棵树的每个节点是否相同，只要有一个地方不同就是不同。
+```
+    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+        if (not p and q) or (p and not q):
+            return False
+        if (not p and not q):
+            return True
+        if p.val == q.val:
+            l = self.isSameTree(p.left, q.left)
+            r = self.isSameTree(p.right, q.right)
+            return l and r
+        else:
+            return False
+```
+
+[101.对称二叉树(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E6%A0%91/python/101.%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91(2%E6%AC%A1).py)<br>
+思路：递归遍历看当前节点的左子树和右子树是否对称。再判断左子树的左子树是否和右子树的右子树相同，左子树的右子树是否和右子树的左子树相同。
+迭代方法借助一个栈，将每个节点的左子树的左子树和右子树的右子树挨着放，左子树的右子树和右子树的左子树挨着放，不停取两个元素出来进行对比。
+```
+#递归法
+    def isrevese(self,p,q):
+        if (not p and q) or (p and not q):
+            return False
+        if not p and not q:
+            return True
+        if p.val==q.val:
+            l=self.isrevese(p.left,q.right)
+            l2=self.isrevese(p.right,q.left)
+            return l and l2
+        else:
+            return False
+#迭代法
+    def isrevese(self, p, q):
+        que = [p, q]
+        while que:
+            t1 = que.pop()
+            t2 = que.pop()
+            if (not t1 and t2) or (t1 and not t2):
+                return False
+            if not t1 and not t2:
+                continue
+            if t1.val != t2.val:
+                return False
+            que.append(t1.left)
+            que.append(t2.right)
+            que.append(t1.right)
+            que.append(t2.left)
+        return True
+```
+
 ## 排序
 [链表归并排序(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/148%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.py)<br>
 ### 记录Leetcode刷的题目
