@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd7cb850-fbf4-4d40-9e67-c3a2e7aaf9ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/树/python/100.相同的树.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/双指针/python/125.验证回文字符串.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/双指针/python/345.反转字符串中的元音字母.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/双指针/python/633.平方数之和.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/双指针/python/680.验证回文字符串II.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/双指针/python/88.合并两个有序数组.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/树/python/101.对称二叉树.py" beforeDir="false" afterPath="$PROJECT_DIR$/树/python/101.对称二叉树(2次).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/树/python/113.路径总和II.py" beforeDir="false" afterPath="$PROJECT_DIR$/树/python/113.路径总和II(2次).py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609464636390</updated>
       <workItem from="1609464637465" duration="121000" />
-      <workItem from="1609464760924" duration="4748000" />
+      <workItem from="1609464760924" duration="8849000" />
     </task>
     <servers />
   </component>
