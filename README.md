@@ -152,7 +152,7 @@ def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 [链表归并排序(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/148%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.py)<br>
 ### 记录Leetcode刷的题目
 Python版本、Java版本（尚未完成）<br>
-按分类查看：[滑动窗口](#滑动窗口)、[二分搜索](#二分搜索)、[动态规划](#动态规划)、[回溯法](#回溯法)<br>
+按分类查看：[滑动窗口](#滑动窗口)、[二分搜索](#二分搜索)、[动态规划](#动态规划)、[回溯法](#回溯法)、[双指针](#双指针)<br>
 
 ## 滑动窗口
 解题模板：<br>
@@ -1030,4 +1030,112 @@ def is_valid(i, j, grid): #判断是否要剪枝
         self.trackback(root.left, target, res + [root.val])
         self.trackback(root.right, target, res + [root.val])
         return
+```
+## 双指针
+解题思路和滑动窗口如出一辙
+
+[88.合并两个有序数组(python版本)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8F%8C%E6%8C%87%E9%92%88/python/88.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84.py)<br>
+思路：因为第一个数组后面有空余的位置，所以我们从后面开始遍历。给的m是第一个数组的元素个数，n是第二个数组的元素个数，那么从两个数组有元素的尾部开始遍历，然后将遍历好的元素从第一个数组的尾部开始覆盖插入。
+```
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        nm,nn=m-1,n-1
+        numputindex=nm+nn+1
+        while(nm>=0 or nn>=0):
+            if nm<0:
+                nums1[numputindex]=nums2[nn]
+                numputindex-=1
+                nn-=1
+            elif nn<0:
+                nums1[numputindex]=nums1[nm]
+                numputindex-=1
+                nm-=1
+            elif nums1[nm]>=nums2[nn]:
+                nums1[numputindex]=nums1[nm]
+                numputindex-=1
+                nm-=1
+            elif nums1[nm]<nums2[nn]:
+                nums1[numputindex]=nums2[nn]
+                numputindex-=1
+                nn-=1
+```
+
+[125.验证回文字符串(python)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8F%8C%E6%8C%87%E9%92%88/python/125.%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2.py)<br>
+思路：首先将原字符串所有大写字母变成小写字母，并且只保留数字和字母。然后使用两个指针，从左边和右边同时遍历，如果中途出现不相等的字符，则说明不是回文串。
+```
+def isPalindrome(self, s: str) -> bool:
+    s=s.lower()
+    ss=[i for i in s if i.isalnum()]
+    left,right=0,len(ss)-1
+    while(left<right):
+        if ss[left]==ss[right]:
+            left+=1
+            right-=1
+        else:
+            return False
+    return True
+```
+
+[680.验证回文字符串II(python)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8F%8C%E6%8C%87%E9%92%88/python/680.%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2II.py)<br>
+思路：由于可以删除一个字母，所以利用递归方式判断是否为回文串。使用左右指针开始遍历开头和结尾。若遇到不同的元素而且没有删除字母的次数了，则返回False，否则如果遇到不同元素而且有删除字母的次数，则递归[left,right-1]和[left+1,right]两个区间，返回他们的或值。遍历结束都没有返回false则返回true
+```
+    def reverse(self,s_list,rest_chance):
+        left,right=0,len(s_list)-1
+        while(left<right):
+            if s_list[left]==s_list[right]:
+                left+=1
+                right-=1
+            elif rest_chance>0:
+                l=self.reverse(s_list[left+1:right+1],rest_chance-1)
+                r=self.reverse(s_list[left:right],rest_chance-1)
+                return l or r
+            else:
+                return False
+        return True
+    def validPalindrome(self, s: str) -> bool:
+        return self.reverse(list(s),1)
+```
+
+[345.反转字符串中的元音字母(python)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8F%8C%E6%8C%87%E9%92%88/python/345.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D.py)<br>
+思路：利用set集合存储所有的元音字母(aeiouAEIOU)，双指针从左边和右边同时向中间遍历，遇到元音字母的时候等待另一边的指针移动，直到两个指针都指向元音字母以后，交换两个字母，然后继续移动，直到两个指针相遇过。
+```
+def reverseVowels(self, s: str) -> str:
+    ss=list(s)
+    dig= {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+    left,right=0,len(s)-1
+    while(left<right):
+        if ss[left] in dig and ss[right] in dig:
+            tmp=ss[left]
+            ss[left]=ss[right]
+            ss[right]=tmp
+            left+=1
+            right-=1
+        elif ss[left] in dig and ss[right] not in dig:
+            right-=1
+        elif ss[left] not in dig and ss[right] in dig:
+            left+=1
+        else:
+            left+=1
+            right-=1
+    return ''.join(ss)
+```
+
+[633.平方数之和(python)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8F%8C%E6%8C%87%E9%92%88/python/633.%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C.py)<br>
+思路：对所给数c，从以[0,根号c]区间左右指针来遍历两数之和，如果比目标小，则左指针往右移动，如果比目标大，则右指针往左移动。
+```
+def judgeSquareSum(self, c: int) -> bool:
+    N = math.floor(math.sqrt(c))
+    left, right = 0, N
+    while (left <= right):
+        tmp = left * left + right * right
+        if tmp == c:
+            return True
+        elif tmp < c:
+            left += 1
+        elif tmp > c:
+            right -= 1
+    return False
 ```
