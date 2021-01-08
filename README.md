@@ -191,6 +191,36 @@ def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         if left == n - k - 1:
             return nums[left]
 ```
+
+[347.前K个高频元素](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/347.%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0.py)<br>
+思路：利用一个字典来存储每个元素以及其出现次数。然后对字典的值进行排序，然后取倒数k个元素，他们的键即为答案。
+```
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        d = defaultdict(int)
+        for i in nums:
+            d[i] += 1
+        s = sorted(d.items(), key=lambda item: item[1])
+        s = s[len(s) - k:]
+        return [i[0] for i in s]
+```
+
+[451.根据字符出现频率排序(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/451.%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F.py)<br>
+思路：和[347.前k个高频元素]思路类似，然后将字符串拼接起来就可以了。
+```
+    def frequencySort(self, s: str) -> str:
+        d = defaultdict(int)
+        for i in s:
+            d[i] += 1
+        sort_result = sorted(d.items(), key=lambda item: item[1], reverse=True)
+        # print(sort_result[::-1])
+        # print(sort_result)
+        new_s = ""
+        for i in sort_result:
+            for _ in range(i[1]):
+                new_s += i[0]
+        return new_s
+```
+
 ### 记录Leetcode刷的题目
 Python版本、Java版本（尚未完成）<br>
 按分类查看：[滑动窗口](#滑动窗口)、[二分搜索](#二分搜索)、[动态规划](#动态规划)、[回溯法](#回溯法)、[双指针](#双指针)<br>
