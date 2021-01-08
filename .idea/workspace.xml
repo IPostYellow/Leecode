@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd7cb850-fbf4-4d40-9e67-c3a2e7aaf9ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/双指针/python/524.通过删除字母匹配到字典里最长单词.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basic_data_structure/排序/215.数组中的第K个最大元素.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basic_data_structure/排序/347.前K个高频元素.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basic_data_structure/排序/451.根据字符出现频率排序.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Basic_data_structure/排序/快速排序.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/动态规划/python/1312.让字符串成为回文串的最少插入次数.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/双指针/python/75.颜色分类.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +42,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.524.通过删除字母匹配到字典里最长单词">
-    <configuration name="113.路径总和II" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.451.根据字符出现频率排序">
+    <configuration name="快速排序" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="myleetcode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -46,12 +51,78 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/树/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Basic_data_structure/排序" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="E:\leetcode\树\python\113.路径总和II(2次).py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Basic_data_structure/排序/快速排序.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="215.数组中的第K个最大元素" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myleetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Basic_data_structure/排序" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Basic_data_structure/排序/215.数组中的第K个最大元素.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="347.前K个高频元素" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myleetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Basic_data_structure/排序" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Basic_data_structure/排序/347.前K个高频元素.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="451.根据字符出现频率排序" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="myleetcode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Basic_data_structure/排序" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Basic_data_structure/排序/451.根据字符出现频率排序.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -84,8 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.451.根据字符出现频率排序" />
+        <item itemvalue="Python.347.前K个高频元素" />
+        <item itemvalue="Python.215.数组中的第K个最大元素" />
+        <item itemvalue="Python.快速排序" />
         <item itemvalue="Python.524.通过删除字母匹配到字典里最长单词" />
-        <item itemvalue="Python.113.路径总和II" />
       </list>
     </recent_temporary>
   </component>
@@ -100,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609464636390</updated>
       <workItem from="1609464637465" duration="121000" />
-      <workItem from="1609464760924" duration="12533000" />
+      <workItem from="1609464760924" duration="22469000" />
     </task>
     <servers />
   </component>
@@ -130,27 +204,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/双指针/python/524.通过删除字母匹配到字典里最长单词.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="3" />
+          <line>21</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/双指针/python/524.通过删除字母匹配到字典里最长单词.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="4" />
+          <line>39</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Basic_data_structure/排序/215.数组中的第K个最大元素.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Basic_data_structure/排序/快速排序.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="len(s1)" language="Python" />
-        <watch expression="len(s2)" language="Python" />
-        <watch expression="s1[p1]" language="Python" />
-        <watch expression="s2[p2]" language="Python" />
+        <watch expression="n-k-1" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/leetcode$524_.coverage" NAME="524.通过删除字母匹配到字典里最长单词 Coverage Results" MODIFIED="1609824768683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/双指针/python" />
+    <SUITE FILE_PATH="coverage/leetcode$347_K.coverage" NAME="347.前K个高频元素 Coverage Results" MODIFIED="1610088374918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Basic_data_structure/排序" />
+    <SUITE FILE_PATH="coverage/leetcode$215_K.coverage" NAME="215.数组中的第K个最大元素 Coverage Results" MODIFIED="1610087273872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Basic_data_structure/排序" />
+    <SUITE FILE_PATH="coverage/leetcode$451_.coverage" NAME="451.根据字符出现频率排序 Coverage Results" MODIFIED="1610089336064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Basic_data_structure/排序" />
+    <SUITE FILE_PATH="coverage/leetcode$.coverage" NAME="快速排序 Coverage Results" MODIFIED="1610086266690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Basic_data_structure/排序" />
     <SUITE FILE_PATH="coverage/leetcode$113_II.coverage" NAME="113.路径总和II Coverage Results" MODIFIED="1609465649419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/树/python" />
   </component>
 </project>
