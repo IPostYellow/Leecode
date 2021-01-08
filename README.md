@@ -1139,3 +1139,42 @@ def judgeSquareSum(self, c: int) -> bool:
             right -= 1
     return False
 ```
+
+[524.通过删除字母匹配到字典里最长单词(python)](https://github.com/IPostYellow/Leecode/blob/master/%E5%8F%8C%E6%8C%87%E9%92%88/python/524.%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D.py)<br>
+思路：将字典列表的每个字符串，拿去与源字符串匹配。通过两个指针指向两个字符串的起始，然后不断移动源字符串的指针，直到找到字典字符串指针指向的字母为止，如果最终字典字符串的指针指完了字典字符串，则说明该字符串为源字符串的子序列。之后只要将最长的子序列中的按字典序最小的那个找出来就好了。
+```
+class Solution:
+    def is_exist(self,s1,s2):
+        p1,p2=0,0
+        while(p1<len(s1) and p2<len(s2)):
+            while(p1<len(s1) and s1[p1]!=s2[p2]):
+                p1+=1
+            if p1>=len(s1):
+                return (-1,s2)
+            p2+=1
+            p1+=1
+        if p2>=len(s2) and p1<len(s1):
+            return (len(s2),s2)
+        else:
+            return (-1,s2)
+    def findLongestWord(self, s: str, d: List[str]) -> str:
+        ans_list=[]
+        for i in d:
+            if i.startswith('j'):
+                print(i)
+            tmp=self.is_exist(s,i)
+            if tmp[0]==-1:
+                continue
+            else:
+                ans_list.append(tmp)
+        ans_list=sorted(ans_list)
+        max_index=-1
+        print(ans_list)
+        for i in range(len(ans_list)):
+            if max_index==-1 or ans_list[i][0]>ans_list[max_index][0]:
+                max_index=i
+        if max_index==-1:
+            return ""
+        else:
+            return ans_list[max_index][1]
+```
