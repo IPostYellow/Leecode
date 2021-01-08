@@ -26,3 +26,15 @@ class Solution2:#回溯 超时
         if not s:
             return 0
         return self.is_huiwen(s)
+#第二次
+class Solution_2:
+    def minInsertions(self, s: str) -> int:
+        dp=[[0]*len(s) for _ in range(len(s))]
+        for l in range(1,len(s)):
+            for i in range(len(s)-l):
+                j=i+l
+                if s[i]==s[j]:
+                    dp[i][j]=min(dp[i+1][j-1],dp[i+1][j]+1,dp[i][j-1]+1)
+                else:
+                    dp[i][j]=min(dp[i+1][j],dp[i][j-1])+1
+        return dp[0][-1]
