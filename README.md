@@ -150,6 +150,77 @@ def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 
 ## 排序
 [链表归并排序(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/148%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.py)<br>
+
+[215.数组的第k大元素(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/215.%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0.py)<br>
+思路：最简单的方法是利用堆排序，取出堆的前k大个元素。但是最快的方法还是利用改进的快速排序。利用二分法来选取主元进行快速排序，如果最终获取到的位置比第k大元素位置小，则说明答案在右边，否则答案在左边。
+```
+    def findk(self, nums, l, r):
+        p1, p2 = l, r + 1
+        while (p1 < p2):
+            p1 += 1
+            while (nums[p1] < nums[l]):
+                p1 += 1
+            p2 -= 1
+            while (nums[p2] > nums[l]):
+                p2 -= 1
+            if p1 < p2:
+                tmp = nums[p2]
+                nums[p2] = nums[p1]
+                nums[p1] = tmp
+        tmp = nums[l]
+        nums[l] = nums[p2]
+        nums[p2] = tmp
+        return p2
+    def findKthLargest(self, nums, k):
+        nums.append(float('inf'))
+        n = len(nums)
+        left, right = 0, n - 1
+        while (left < right):
+            mid = left + (right - left >> 1)
+            # 将中间的数换到第一个去配合这个快排
+            tmp = nums[left]
+            nums[left] = nums[mid]
+            nums[mid] = tmp
+            position = self.findk(nums, left, right)
+            if position == n - k - 1:
+                return nums[position]
+            elif position > n - k - 1:
+                right = position - 1
+            else:
+                left = position + 1
+        if left == n - k - 1:
+            return nums[left]
+```
+
+[347.前K个高频元素](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/347.%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0.py)<br>
+思路：利用一个字典来存储每个元素以及其出现次数。然后对字典的值进行排序，然后取倒数k个元素，他们的键即为答案。
+```
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        d = defaultdict(int)
+        for i in nums:
+            d[i] += 1
+        s = sorted(d.items(), key=lambda item: item[1])
+        s = s[len(s) - k:]
+        return [i[0] for i in s]
+```
+
+[451.根据字符出现频率排序(python)](https://github.com/IPostYellow/Leecode/blob/master/Basic_data_structure/%E6%8E%92%E5%BA%8F/451.%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F.py)<br>
+思路：和[347.前k个高频元素]思路类似，然后将字符串拼接起来就可以了。
+```
+    def frequencySort(self, s: str) -> str:
+        d = defaultdict(int)
+        for i in s:
+            d[i] += 1
+        sort_result = sorted(d.items(), key=lambda item: item[1], reverse=True)
+        # print(sort_result[::-1])
+        # print(sort_result)
+        new_s = ""
+        for i in sort_result:
+            for _ in range(i[1]):
+                new_s += i[0]
+        return new_s
+```
+
 ### 记录Leetcode刷的题目
 Python版本、Java版本（尚未完成）<br>
 按分类查看：[滑动窗口](#滑动窗口)、[二分搜索](#二分搜索)、[动态规划](#动态规划)、[回溯法](#回溯法)、[双指针](#双指针)<br>
