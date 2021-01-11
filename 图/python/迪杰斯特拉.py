@@ -44,6 +44,3 @@ for i in range(len(Edge)):
             dic[i][j] = Edge[i][j]
 print(dic)
 
-
-def dijstrals(start, dic,n):
-    d=[0]*len()
