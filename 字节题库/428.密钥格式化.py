@@ -45,7 +45,7 @@ class Solution:
             return ans[1:]
         else:
             return ss[:right]+ans
-        
+
 class Solution2:
     def licenseKeyFormatting(self, S: str, K: int) -> str:
         ans=""
