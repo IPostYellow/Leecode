@@ -14,7 +14,7 @@ n: 13   k: 2
 '''
 class Solution:
     def findKthNumber(self, n: int, k: int) -> int:
-        def count_all_node(pre, n):
+        def count_all_node(pre, n): #计算当前字典前缀下有多少个节点
             cur = pre
             next = pre + 1
             count = 0
