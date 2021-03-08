@@ -52,7 +52,7 @@ class Solution2:
             '9->7': 8
         }
 
-        def count_number(cur, used, skip, rest_step):  # 从cur出发能够有多少种滑动方法
+        def count_number(cur, used, skip, rest_step):  # 从cur出发能够有多少种滑动方法,经过了rest_step这么多点
             if rest_step == 0:
                 return 1
             res = 0
