@@ -40,3 +40,27 @@ class Solution:
             if (tmp_sum - k) in sum_set:  # num[i]-num[j]==k
                 max_len = max(max_len, i - sum_set[tmp_sum - k])
         return max_len
+
+# 第二次
+from collections import defaultdict
+class Solution2:
+    def maxSubArrayLen(self, nums: List[int], k: int) -> int:
+        # [1,-1,5,-2,3] k=3
+        # [1,0,5,3,6]
+        # [-2,-1,2,1] k=1
+        # [-2,-3,-1,0] -1--2=1 nums[i]-nums[j]=k -> j+1到i的和为k
+        left,right=0,0
+        max_len=0
+        tmp_sum=0
+        sum_dict=defaultdict(int)
+        while(right<len(nums)):
+            tmp_sum+=nums[right]
+            if tmp_sum not in sum_dict: #记录最开始的那个位置就好了，最近
+                sum_dict[tmp_sum]=right
+            if tmp_sum==k:
+                max_len=max(max_len,right+1)
+            if tmp_sum-k in sum_dict:
+                max_len=max(max_len,right-sum_dict[tmp_sum-k])
+
+            right+=1
+        return max_len

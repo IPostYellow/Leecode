@@ -61,3 +61,30 @@ class Solution:
             max_len=max(max_len,right-left+1)
             right+=1 # 窗口滑动
         return max_len
+
+#第二次
+from collections import defaultdict
+
+
+class Solution2:
+    def totalFruit(self, tree: List[int]) -> int:
+        # 相当于问最多不超过2个数字的子串有多长
+        left, right = 0, 0
+        max_len = 0
+        char_dict = defaultdict(int)
+        fruit_cnt = 0
+        while right < len(tree):
+            if tree[right] not in char_dict:
+                fruit_cnt += 1
+            char_dict[tree[right]] += 1
+            while fruit_cnt > 2:
+                char_dict[tree[left]] -= 1
+                if char_dict[tree[left]] == 0:
+                    fruit_cnt -= 1
+                    del char_dict[tree[left]]
+                left += 1
+
+            max_len = max(max_len, right - left + 1)
+            right += 1
+
+        return max_len

@@ -30,7 +30,7 @@ class Solution:
     def longestSubarray(self, nums: List[int]) -> int:
         left,right=0,0
         max_len=0
-        zero_num=0
+        zero_num=0 #保存0的个数，要保证0的个数不超过1
         while right<len(nums):
             if nums[right]==0:
                 zero_num+=1
@@ -40,4 +40,23 @@ class Solution:
                 left+=1
             max_len=max(max_len,right-left)
             right+=1
+        return max_len
+
+# 第二次
+class Solution2:
+    def longestSubarray(self, nums: List[int]) -> int:
+        left, right = 0, 0
+        zero_num = 0 #记录0的个数
+        max_len = 0
+        while (right < len(nums)):
+            if nums[right] == 0:
+                zero_num += 1
+
+            while zero_num > 1: #保证0的个数不超过1
+                if nums[left] == 0:
+                    zero_num -= 1
+                left += 1
+
+            max_len = max(max_len, right - left) #因为是要删除掉一个元素的，所以不需要+1
+            right += 1
         return max_len

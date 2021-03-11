@@ -39,3 +39,22 @@ class Solution:
             max_len=max(max_len,right-left+1)
             right+=1
         return max_len
+
+#第二次
+from collections import defaultdict
+class Solution2:
+    def characterReplacement(self, s: str, k: int) -> int:
+        left, right = 0, 0
+        max_len, most_word = 0, 0
+        word_count = defaultdict(int)
+        while (right < len(s)):
+            word_count[s[right]] += 1
+            most_word = max(most_word, word_count[s[right]])
+
+            while right - left + 1 - most_word > k:  # 不需要维护most_word,因为后面的长度要想更长，most_word必须大于当前才行，因为长度是most_word+k，k是不变的
+                word_count[s[left]] -= 1
+                left += 1
+
+            max_len = max(max_len, right - left + 1)
+            right += 1
+        return max_len

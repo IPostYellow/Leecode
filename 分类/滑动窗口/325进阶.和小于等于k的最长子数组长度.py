@@ -19,5 +19,22 @@ class Solution:
                 for j in range(0,i):
                     if tmp_sum-sum_set[j]<=k:
                         max_len=max(max_len,i-j)
+        return max_len
 
-
+# 第二次
+class Solution2:
+    def maxSubArrayLen(self, nums: List[int], k: int) -> int:
+        max_len=0
+        sum_array=[0]*len(nums)
+        tmp_sum=0
+        for i in range(len(nums)):
+            tmp_sum+=nums[i]
+            sum_array[i]=tmp_sum
+            if tmp_sum<=k:
+                max_len=max(max_len,i+1)
+            else:
+                for j in range(i):
+                    if sum_array[i]-sum_array[j]<=k:
+                        max_len=max(max_len,i-j)
+                        break
+        return max_len

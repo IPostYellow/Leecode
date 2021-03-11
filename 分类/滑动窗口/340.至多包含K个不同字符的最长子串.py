@@ -38,3 +38,27 @@ class Solution:
             max_len=max(max_len,right-left+1) # 每次判断一下字符串长度
             right+=1
         return max_len
+
+#第二次
+from collections import defaultdict
+class Solution2:
+    def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
+        left, right = 0, 0
+        max_len = 0
+        char_cnt = 0
+        char_Dict = defaultdict(int)
+        while right < len(s):
+            if s[right] not in char_Dict:
+                char_cnt += 1
+            char_Dict[s[right]] += 1
+
+            while char_cnt > k:
+                char_Dict[s[left]] -= 1
+                if char_Dict[s[left]] == 0:
+                    char_cnt -= 1
+                    del char_Dict[s[left]]
+                left += 1
+
+            max_len = max(max_len, right - left + 1)
+            right += 1
+        return max_len
