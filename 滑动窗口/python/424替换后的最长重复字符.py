@@ -47,4 +47,4 @@ class Solution:
         return maxLen
 
 s = Solution()
-print(s.characterReplacement("ABBB", 2))
+print(s.characterReplacement("AABABBA", 1))
