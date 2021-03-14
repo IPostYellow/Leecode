@@ -45,3 +45,25 @@ class Solution:
             right += 1
 
         return max_len
+
+# 第二次
+from collections import defaultdict
+
+
+class Solution2:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # 典型滑动窗口 使用哈希表记录遇到的字母
+        max_len = 0
+        left, right = 0, 0
+        word_hash = collections.defaultdict(int)
+        while right < len(s):
+            word_hash[s[right]] += 1
+            while word_hash[s[right]] > 1:
+                word_hash[s[left]] -= 1
+                if word_hash[s[left]] == 0:
+                    del word_hash[s[left]]
+                left += 1
+
+            max_len = max(max_len, right - left + 1)
+            right += 1
+        return max_len

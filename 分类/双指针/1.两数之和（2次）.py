@@ -48,3 +48,12 @@ class Solution2:
                 left+=1
         return [-1,-1]
 
+# 第二次
+class Solution3:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # 利用一个哈希表存储遍历过的值，每次遍历到别的值的时候使用target减去别的值看看是否存在于哈希表中，若存在则说明这两相加为目标值
+        tmp_sum=collections.defaultdict(int)
+        for i in range(len(nums)):
+            if target-nums[i] in tmp_sum:
+                return [tmp_sum[target-nums[i]],i]
+            tmp_sum[nums[i]]=i
