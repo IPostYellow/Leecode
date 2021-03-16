@@ -53,3 +53,15 @@ class Solution:
                 nums[nums_len] = nums[right]
             right += 1
         return nums_len + 1
+
+#第二次
+class Solution2:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        # 由于是排序好的数组，所以重复出现的元素肯定相邻
+        left,right=0,0
+        while (right<len(nums)):
+            if nums[right]!=nums[left]: #遇到不等的就把他放到left后面，同时更新left的值
+                left+=1
+                nums[left]=nums[right]
+            right+=1
+        return left+1
