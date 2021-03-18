@@ -82,28 +82,33 @@
 #         print("true")
 #     else:
 #         print("false")
-def compute(p,t):
-    index1=0
-    index2=0
-    while index1<len(p) and index2<len(t):
-        if p[index1]=="?" or p[index1]==t[index2]:
-            index1+=1
-            index2+=1
-        elif p[index1]=="*":
-            for i in range(index2,len(t)):
-                if compute(p[index1+1:], t[i:]):
-                    return True
-            return False
-        elif p[index1]!=t[index2]:
-            return False
-    if index1>=len(p) and index2>=len(p):
-        return True
-    else:
-        return False
-p=input()
-t=input()
+# def compute(p,t):
+#     index1=0
+#     index2=0
+#     while index1<len(p) and index2<len(t):
+#         if p[index1]=="?" or p[index1]==t[index2]:
+#             index1+=1
+#             index2+=1
+#         elif p[index1]=="*":
+#             for i in range(index2,len(t)):
+#                 if compute(p[index1+1:], t[i:]):
+#                     return True
+#             return False
+#         elif p[index1]!=t[index2]:
+#             return False
+#     if index1>=len(p) and index2>=len(p):
+#         return True
+#     else:
+#         return False
+# p=input()
+# t=input()
+#
+# if compute(p, t):
+#     print(1)
+# else:
+#     print(0)
+import heapq
 
-if compute(p, t):
-    print(1)
-else:
-    print(0)
+s = [1, 8, 5, 8, 4, 65, 1, 6, 3, 4]
+heapq.heapify(s)
+print(s)
