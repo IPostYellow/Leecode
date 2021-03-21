@@ -107,8 +107,26 @@
 #     print(1)
 # else:
 #     print(0)
-import heapq
+# import heapq
+#
+# s = [1, 8, 5, 8, 4, 65, 1, 6, 3, 4]
+# heapq.heapify(s)
+# print(s)
+# import sys
+# print(sys.getsizeof("我"))
+# print(sys.getsizeof("我真是草乐购"))
+# print(sys.getsizeof("H"))
+# s="我真的是草乐购"
+# c=0
+# for i in range(len(s)):
+#     print(type(s[i]))
+# print(c)
 
-s = [1, 8, 5, 8, 4, 65, 1, 6, 3, 4]
-heapq.heapify(s)
-print(s)
+print(1 ^ 1)
+print(1 ^ 0)
+print(0 ^ 1)
+print(0 ^ 0)
+print(77^77)
+a=66^77
+print(a)
+print(a^77)
