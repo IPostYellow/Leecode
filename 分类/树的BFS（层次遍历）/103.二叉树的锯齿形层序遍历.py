@@ -32,7 +32,7 @@ class TreeNode:
         self.right = right
 from collections import deque
 class Solution:
-    # 双端队列，奇数层左边出队，偶数层左边出队
+    # 双端队列，奇数层左边出队，偶数层右边边出队
     def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
         if not root:
             return []
